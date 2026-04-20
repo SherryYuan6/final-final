@@ -7,12 +7,14 @@ public class PickupItem : MonoBehaviour
 
     public void PickUp()
     {
-        bool added = ToolBarUI.Instance.AddItem(itemIcon);
+        Debug.Log("PickUp called on: " + gameObject.name);
 
-        if (added)
+        if (ToolBarUI.Instance != null)
         {
-            Destroy(gameObject);
+            ToolBarUI.Instance.AddItem(itemIcon);
         }
+
+        Destroy(gameObject);
     }
 
     public void ShowPrompt(bool show)
