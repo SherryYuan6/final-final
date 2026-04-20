@@ -10,17 +10,28 @@ public class ComputerPasswordCheck : MonoBehaviour
 
     public void CheckPassword()
     {
+        if (inputField == null || passwordPanel == null || desktopPanel == null)
+        {
+            Debug.LogError("ComputerPasswordCheck: missing reference!");
+            return;
+        }
+
         if (inputField.text == correctPassword)
         {
-            GameManager.Instance.computerUnlocked = true;
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.computerUnlocked = true;
+            }
+
             passwordPanel.SetActive(false);
             desktopPanel.SetActive(true);
-            Time.timeScale = 0f; // 仍停在桌面界面
+            Time.timeScale = 0f;
         }
         else
         {
             Debug.Log("Wrong password");
             inputField.text = "";
+            inputField.ActivateInputField();
         }
     }
 }
