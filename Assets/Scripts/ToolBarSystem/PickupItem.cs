@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    public Sprite itemIcon;
+    public ItemData itemData;
     public GameObject promptUI;
 
     public void PickUp()
@@ -11,10 +11,13 @@ public class PickupItem : MonoBehaviour
 
         if (ToolBarUI.Instance != null)
         {
-            ToolBarUI.Instance.AddItem(itemIcon);
-        }
+            bool added = ToolBarUI.Instance.AddItem(itemData);
 
-        Destroy(gameObject);
+            if (added)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void ShowPrompt(bool show)
