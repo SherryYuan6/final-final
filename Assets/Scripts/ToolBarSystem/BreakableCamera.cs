@@ -64,24 +64,30 @@ public class BreakableCamera : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+{
+    Debug.Log("Something entered trigger: " + other.name);
+
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = true;
+        Debug.Log("Player entered camera range");
+        playerInRange = true;
 
-            if (promptUI != null && !isBroken)
-                promptUI.SetActive(true);
-        }
+        if (promptUI != null && !isBroken)
+            promptUI.SetActive(true);
     }
+}
 
-    private void OnTriggerExit(Collider other)
+private void OnTriggerExit(Collider other)
+{
+    Debug.Log("Something exited trigger: " + other.name);
+
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
+        Debug.Log("Player left camera range");
+        playerInRange = false;
 
-            if (promptUI != null)
-                promptUI.SetActive(false);
-        }
+        if (promptUI != null)
+            promptUI.SetActive(false);
     }
+}
 }
