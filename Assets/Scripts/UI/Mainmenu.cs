@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Dementia"); 
+        SceneManager.LoadScene("Office"); 
     }
 
     public void QuitGame()
