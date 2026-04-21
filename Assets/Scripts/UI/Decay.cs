@@ -11,24 +11,30 @@ public class Decay : MonoBehaviour
     public float currentDecay = 100f;
     public float passiveDecayRate = 1.695f;
 
+    [Header("Reveal Threshold")]
+    public float revealThreshold = 30f;   // 理智低于30时显示真实线索
+
     public Slider decaySlider;
     public Image sliderFill;
     public Color healthyColor = Color.green;
     public Color dangerColor = Color.red;
     public Image fadeImage;
+
     private bool isEnding = false;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
-    // Update is called once per frame
     void Start()
     {
         UpdateUI();
+
         if (fadeImage != null)
             fadeImage.color = new Color(0, 0, 0, 0);
+
         StartCoroutine(FadeAndLoad());
     }
 
@@ -38,10 +44,19 @@ public class Decay : MonoBehaviour
             return;
 
         float decay = Time.deltaTime * passiveDecayRate;
-
         LoseCognitive(decay);
+        
+          if (isEnding)
+        return;
+
+
+     // 测试用：按K直接掉10点
+     if (Input.GetKeyDown(KeyCode.K))
+    {
+        LoseCognitive(10f);
     }
-    
+    }
+
     void UpdateUI()
     {
         float ratio = currentDecay / maxDecay;
@@ -51,9 +66,7 @@ public class Decay : MonoBehaviour
 
         if (sliderFill != null)
             sliderFill.color = Color.Lerp(dangerColor, healthyColor, ratio);
-
     }
-
 
     public void LoseCognitive(float decay)
     {
@@ -65,10 +78,24 @@ public class Decay : MonoBehaviour
             TriggerEnding();
         }
     }
+
+    // 当前理智百分比（0~1）
+    public float GetSanityRatio()
+    {
+        return currentDecay / maxDecay;
+    }
+
+    // 是否达到“真实线索显现”的条件
+    public bool CanRevealTrueClue()
+    {
+        return currentDecay <= revealThreshold;
+    }
+
     void TriggerEnding()
     {
         if (isEnding)
             return;
+
         isEnding = true;
         SceneManager.LoadScene("Ui UX 2");
     }
@@ -79,9 +106,12 @@ public class Decay : MonoBehaviour
         while (t < 59f)
         {
             t += Time.deltaTime;
+
             if (fadeImage != null)
                 fadeImage.color = new Color(0, 0, 0, Mathf.Clamp01(t / 59f));
+
             yield return null;
         }
     }
+    
 }
