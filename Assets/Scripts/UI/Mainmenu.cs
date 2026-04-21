@@ -23,14 +23,14 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit Game"); 
     }
 
-    public void OpenSettings ()
-    {
-        settingsPanel. SetActive (true);
-    }
-    public void CloseSettings ()
-    {
-        settingsPanel.SetActive (false);
-    }
+    // public void OpenSettings ()
+    // {
+    //     settingsPanel. SetActive (true);
+    // }
+    // public void CloseSettings ()
+    // {
+    //     settingsPanel.SetActive (false);
+    // }
      
     public void SetVolume(float volume)
     {

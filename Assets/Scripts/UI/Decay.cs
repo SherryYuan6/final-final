@@ -97,7 +97,7 @@ public class Decay : MonoBehaviour
             return;
 
         isEnding = true;
-        SceneManager.LoadScene("Ui UX 2");
+        SceneManager.LoadScene("End Screen");
     }
 
     IEnumerator FadeAndLoad()
