@@ -43,7 +43,7 @@ public class Decay : MonoBehaviour
         if (isEnding)
             return;
 
-        float decay = Time.deltaTime * passiveDecayRate;
+        float decay = Time.unscaledDeltaTime * passiveDecayRate;
         LoseCognitive(decay);
         
           if (isEnding)
