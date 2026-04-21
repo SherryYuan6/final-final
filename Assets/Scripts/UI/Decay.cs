@@ -8,7 +8,7 @@ public class Decay : MonoBehaviour
     public static Decay Instance;
 
     public float maxDecay = 100f;
-    public float currentDecay = 100f;
+    public float currentDecay = 20f;
     public float passiveDecayRate = 1.695f;
 
     [Header("Reveal Threshold")]
