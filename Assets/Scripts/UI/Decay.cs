@@ -7,12 +7,12 @@ public class Decay : MonoBehaviour
 {
     public static Decay Instance;
 
-    public float maxDecay = 100f;
+    public float maxDecay = 200f;
     public float currentDecay = 20f;
     public float passiveDecayRate = 1.695f;
 
     [Header("Reveal Threshold")]
-    public float revealThreshold = 30f;   // 理智低于30时显示真实线索
+    public float revealThreshold = 50f; //When Slider falls to 50, new Hint appears. Change if you want it lower or higher
 
     public Slider decaySlider;
     public Image sliderFill;
@@ -45,6 +45,7 @@ public class Decay : MonoBehaviour
 
         float decay = Time.unscaledDeltaTime * passiveDecayRate;
         LoseCognitive(decay);
+        AddCognitive(decay);
         
           if (isEnding)
         return;
@@ -66,6 +67,11 @@ public class Decay : MonoBehaviour
 
         if (sliderFill != null)
             sliderFill.color = Color.Lerp(dangerColor, healthyColor, ratio);
+    }
+    public void AddCognitive(float decay)
+    {
+        currentDecay = Mathf.Clamp(1f, currentDecay + decay, maxDecay);
+        UpdateUI();
     }
 
     public void LoseCognitive(float decay)

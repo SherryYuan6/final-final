@@ -18,13 +18,16 @@ public class ComputerPasswordCheck : MonoBehaviour
 
         if (inputField.text == correctPassword)
         {
-            if (GameManager.Instance != null)
+            if (TrashCanPuzzle.Instance != null)
             {
-                GameManager.Instance.computerUnlocked = true;
+                TrashCanPuzzle.Instance.computerUnlocked = true;
             }
 
             passwordPanel.SetActive(false);
             desktopPanel.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Time.timeScale = 0f;
         }
         else
@@ -33,5 +36,18 @@ public class ComputerPasswordCheck : MonoBehaviour
             inputField.text = "";
             inputField.ActivateInputField();
         }
+    }
+
+    public void CloseComputer()
+    {
+        if (desktopPanel != null)
+            desktopPanel.SetActive(false);
+
+        if (passwordPanel != null)
+            passwordPanel.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
     }
 }

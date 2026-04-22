@@ -12,7 +12,7 @@ public class FolderPasswordCheck : MonoBehaviour
     {
         if (inputField.text == correctPassword)
         {
-            GameManager.Instance.folderUnlocked = true;
+            TrashCanPuzzle.Instance.folderUnlocked = true;
             folderPasswordPanel.SetActive(false);
             finalContentPanel.SetActive(true);
         }

@@ -5,6 +5,14 @@ public class FolderUI : MonoBehaviour
     public GameObject desktopPanel;
     public GameObject folderHintPanel;
 
+    public void OpenDesktop()
+    {
+        desktopPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+    }
+
     public void OpenFolderHint()
     {
         folderHintPanel.SetActive(true);
@@ -18,7 +26,6 @@ public class FolderUI : MonoBehaviour
     public void CloseDesktop()
     {
         desktopPanel.SetActive(false);
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;

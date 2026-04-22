@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class TrashCanPuzzle : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static TrashCanPuzzle Instance;
 
     public bool trashHintViewed = false;
     public bool computerUnlocked = false;
