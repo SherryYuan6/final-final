@@ -7,7 +7,7 @@ public class Decay : MonoBehaviour
 {
     public static Decay Instance;
 
-    public float maxDecay = 200f;
+    public float maxDecay = 100f;
     public float currentDecay = 20f;
     public float passiveDecayRate = 1.695f;
 
@@ -45,7 +45,7 @@ public class Decay : MonoBehaviour
 
         float decay = Time.unscaledDeltaTime * passiveDecayRate;
         LoseCognitive(decay);
-        AddCognitive(decay);
+        // AddCognitive(decay);
         
           if (isEnding)
         return;
@@ -68,11 +68,11 @@ public class Decay : MonoBehaviour
         if (sliderFill != null)
             sliderFill.color = Color.Lerp(dangerColor, healthyColor, ratio);
     }
-    public void AddCognitive(float decay)
-    {
-        currentDecay = Mathf.Clamp(1f, currentDecay + decay, maxDecay);
-        UpdateUI();
-    }
+    // public void AddCognitive(float decay)
+    // {
+    //     currentDecay = Mathf.Clamp(1f, currentDecay + decay, maxDecay);
+    //     UpdateUI();
+    // }
 
     public void LoseCognitive(float decay)
     {
