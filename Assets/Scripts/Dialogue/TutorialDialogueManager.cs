@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 
@@ -10,70 +9,60 @@ public class TutorialDialogueManager : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
 
-    [Header("Settings")]
-    public KeyCode nextKey = KeyCode.Space;
-
-    private string[] lines;
-    private int currentLine;
-    private bool isShowing = false;
+    private string[] currentLines;
+    private int currentIndex;
+    private bool isDialogueActive = false;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
     }
 
     private void Update()
     {
-        if (isShowing && Input.GetKeyUp(nextKey))
+        if (isDialogueActive && Input.GetMouseButtonDown(0))
         {
             ShowNextLine();
         }
     }
-    
-    public void StartDialogue(string[] newLines)
+
+    public void StartDialogue(string[] lines)
     {
-        if (newLines == null || newLines.Length == 0) return;
-        
-        lines = newLines;
-        currentLine = 0;
-        isShowing = true;
+        if (lines == null || lines.Length == 0) return;
 
-        dialoguePanel.SetActive(true);
-        dialogueText.text = lines[currentLine];
+        currentLines = lines;
+        currentIndex = 0;
+        isDialogueActive = true;
 
-        FindAnyObjectByType<FirstPersonMovement>().enabled = false;
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(true);
+
+        if (dialogueText != null)
+            dialogueText.text = currentLines[currentIndex];
     }
 
-    public void ShowNextLine()
+    void ShowNextLine()
     {
-        currentLine++;
+        currentIndex++;
 
-        if (currentLine < lines.Length)
+        if (currentIndex < currentLines.Length)
         {
-            EndDialogue();
+            dialogueText.text = currentLines[currentIndex];
         }
         else
         {
-            dialogueText.text = lines[currentLine];
+            EndDialogue();
         }
     }
-        public void EndDialogue()
-        {
-            isShowing = false;
+
+    void EndDialogue()
+    {
+        isDialogueActive = false;
+
+        if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
-
-            FindAnyObjectByType<FirstPersonMovement>().enabled = true;
-        }
-
-        public bool Isshowing()
-        {
-            return isShowing;
-        }
+    }
 }

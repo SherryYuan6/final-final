@@ -61,6 +61,16 @@ public class BreakableCamera : MonoBehaviour
 
         if (promptUI != null)
             promptUI.SetActive(false);
+
+        TutorialDialogueManager.instance.StartDialogue(new string[]
+        {
+            "Nice.",
+            "The camera is destroy.",
+            "Now I can finally breathe a little easier.",
+            "I've been having hallucinations these past few days. I keep seeing things that don't actually exist.",
+            "It must be something wrong with the chip inside my body. I need to find a way to remove it as soon as possible.",
+            "I should look around this room for anything useful. I need to keep moving forward, or they'll catch up to me."
+        });
     }
 
     private void OnTriggerEnter(Collider other)

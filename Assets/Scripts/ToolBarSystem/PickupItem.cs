@@ -15,6 +15,12 @@ public class PickupItem : MonoBehaviour
 
             if (added)
             {
+                TutorialDialogueManager.instance.StartDialogue(new string[]
+            {
+                "Good.",
+                "Now find a camera.",
+                "Press E near it to smash it."
+            });
                 Destroy(gameObject);
             }
         }
@@ -27,4 +33,5 @@ public class PickupItem : MonoBehaviour
             promptUI.SetActive(show);
         }
     }
+
 }

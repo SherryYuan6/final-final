@@ -13,10 +13,4 @@ public class StartTutorial : MonoBehaviour
         };
         TutorialDialogueManager.instance.StartDialogue(introLines);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
