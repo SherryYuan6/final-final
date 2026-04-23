@@ -84,7 +84,11 @@ public class Decay : MonoBehaviour
             TriggerEnding();
         }
     }
-
+    public void AddCognitive(float amount)
+{
+    currentDecay = Mathf.Clamp(currentDecay + amount, 0f, maxDecay);
+    UpdateUI();
+}
     // 当前理智百分比（0~1）
     public float GetSanityRatio()
     {
