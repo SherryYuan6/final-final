@@ -8971,6 +8971,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 992957923}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 992957924}
   m_SourcePrefab: {fileID: 100100000, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
 --- !u!4 &992957921 stripped
 Transform:
@@ -9004,6 +9007,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4526883337856874583, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
+--- !u!114 &992957924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992957922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: c203989f184287b4f81a6ee7a303f0ff, type: 2}
+  promptUI: {fileID: 0}
+  pickupDialogue: []
 --- !u!1 &1002403716
 GameObject:
   m_ObjectHideFlags: 0
@@ -9304,6 +9322,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupItem
   itemData: {fileID: 11400000, guid: 8fa192d9d4995ed408ce8a9a614022c4, type: 2}
   promptUI: {fileID: 724679981}
+  pickupDialogue:
+  - Good.
+  - Now find a camera.
+  - Press E near it to smash it.
 --- !u!64 &1051916324
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -1,9 +1,14 @@
 using UnityEngine;
 
+using UnityEngine;
+
 public class PickupItem : MonoBehaviour
 {
     public ItemData itemData;
     public GameObject promptUI;
+
+    [TextArea(2, 4)]
+    public string[] pickupDialogue;
 
     public void PickUp()
     {
@@ -15,12 +20,11 @@ public class PickupItem : MonoBehaviour
 
             if (added)
             {
-                TutorialDialogueManager.instance.StartDialogue(new string[]
-            {
-                "Good.",
-                "Now find a camera.",
-                "Press E near it to smash it."
-            });
+                if (pickupDialogue != null && pickupDialogue.Length > 0)
+                {
+                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
+                }
+
                 Destroy(gameObject);
             }
         }
@@ -33,5 +37,4 @@ public class PickupItem : MonoBehaviour
             promptUI.SetActive(show);
         }
     }
-
 }
