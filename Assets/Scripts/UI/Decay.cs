@@ -90,6 +90,11 @@ public class Decay : MonoBehaviour
     UpdateUI();
 }
     // 当前理智百分比（0~1）
+public void RestoreByPercent(float percent)
+{
+    float amount = maxDecay * percent;
+    AddCognitive(amount);
+}
     public float GetSanityRatio()
     {
         return currentDecay / maxDecay;
