@@ -2951,7 +2951,7 @@ RectTransform:
   m_GameObject: {fileID: 369017776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.63763, y: 0.63763, z: 0.63763}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1438488029}
@@ -2968,21 +2968,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369017776}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -2036053891, guid: d74cf0ebdd195a74a9847ebe7a34275c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3694,6 +3694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415253092}
   - component: {fileID: 415253093}
+  - component: {fileID: 415253094}
   m_Layer: 0
   m_Name: MechanicalArm
   m_TagString: Untagged
@@ -3735,6 +3736,27 @@ MonoBehaviour:
   normalMechanicalArm: {fileID: 6949514849656474599}
   changeMechanicalArm: {fileID: 2447099230831523775}
   sound: {fileID: 0}
+--- !u!65 &415253094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415253091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.9300976, y: 2.9789639, z: 2.771591}
+  m_Center: {x: -1.7712426, y: 0.9894819, z: -0.09248756}
 --- !u!1001 &421335786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7704,7 +7726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.318996, y: -257}
+  m_AnchoredPosition: {x: -38.31909, y: -257}
   m_SizeDelta: {x: 97.174, y: -444.099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888502981
@@ -8970,10 +8992,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 992957923}
+      addedObject: {fileID: 992957924}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 992957924}
+      addedObject: {fileID: 992957927}
   m_SourcePrefab: {fileID: 100100000, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
 --- !u!4 &992957921 stripped
 Transform:
@@ -8985,8 +9007,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
   m_PrefabInstance: {fileID: 992957920}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &992957923
-MeshCollider:
+--- !u!114 &992957924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992957922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: c203989f184287b4f81a6ee7a303f0ff, type: 2}
+  promptUI: {fileID: 0}
+  pickupDialogue: []
+--- !u!65 &992957927
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9003,25 +9040,9 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4526883337856874583, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
---- !u!114 &992957924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992957922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
-  itemData: {fileID: 11400000, guid: c203989f184287b4f81a6ee7a303f0ff, type: 2}
-  promptUI: {fileID: 0}
-  pickupDialogue: []
+  serializedVersion: 3
+  m_Size: {x: 0.16230212, y: 0.15793033, z: 0.091871135}
+  m_Center: {x: 0.0015239285, y: -0.0018558367, z: 0.045935933}
 --- !u!1 &1002403716
 GameObject:
   m_ObjectHideFlags: 0
@@ -19909,8 +19930,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706457508464215468}
-  - component: {fileID: 2447099230831523777}
-  - component: {fileID: 2447099230831523776}
   m_Layer: 0
   m_Name: changeMechanicalArm
   m_TagString: Untagged
@@ -19918,44 +19937,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 0
---- !u!65 &2447099230831523776
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447099230831523775}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.3704593, y: 3.1156368, z: 1}
-  m_Center: {x: -1.1852297, y: 1.0578184, z: 0.0000003452991}
---- !u!114 &2447099230831523777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447099230831523775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2fe6b3b8d5f69c4cabea056a3201849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MechanicalArm
-  requiredItemID: gear
-  promptUI: {fileID: 0}
-  normalMechanicalArm: {fileID: 0}
-  changeMechanicalArm: {fileID: 0}
-  sound: {fileID: 0}
 --- !u!33 &2448238684385240801
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22633,7 +22614,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6209051251679001076}
-  - component: {fileID: 6949514849656474600}
   m_Layer: 0
   m_Name: normalMechanicalArm
   m_TagString: Untagged
@@ -22641,27 +22621,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!65 &6949514849656474600
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949514849656474599}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.3915215, y: 2.6026402, z: 1.9686368}
-  m_Center: {x: -1.5349059, y: 0.8013201, z: -0.18444942}
 --- !u!33 &6952873085757119161
 MeshFilter:
   m_ObjectHideFlags: 0

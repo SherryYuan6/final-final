@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: gear
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemID: gear
-  Icon: {fileID: 21300000, guid: 26c08d3cdfa2638499767da3dd1bb5ba, type: 3}
+  Icon: {fileID: -2036053891, guid: d74cf0ebdd195a74a9847ebe7a34275c, type: 3}
