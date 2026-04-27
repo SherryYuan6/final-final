@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f0895af34ed394890e7b587f52320e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockBoxDialPassword
-  correctPassword: 0714
+  correctPassword: 0710
   lockBoxPanel: {fileID: 32154877}
   digitTexts:
   - {fileID: 230381163}
