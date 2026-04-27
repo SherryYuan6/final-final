@@ -3732,6 +3732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MechanicalArm
   requiredItemID: gear
+  requiredAmount: 3
   promptUI: {fileID: 0}
   normalMechanicalArm: {fileID: 6949514849656474599}
   changeMechanicalArm: {fileID: 2447099230831523775}

@@ -3,6 +3,7 @@ using UnityEngine;
 public class MechanicalArm : MonoBehaviour
 {
     public string requiredItemID = "gear";
+    public int requiredAmount = 3;
 
     public GameObject promptUI;
     public GameObject normalMechanicalArm;
@@ -10,15 +11,13 @@ public class MechanicalArm : MonoBehaviour
     public AudioSource sound;
 
     private bool playerInRange = false;
-    private bool isChanged = false;
+    private bool isActivated = false;
+    private bool hasShownHint = false;
 
     void Start()
     {
-        if (normalMechanicalArm != null)
-            normalMechanicalArm.SetActive(true);
-
-        if (changeMechanicalArm != null)
-            changeMechanicalArm.SetActive(false);
+        normalMechanicalArm.SetActive(true);
+        changeMechanicalArm.SetActive(false);
 
         if (promptUI != null)
             promptUI.SetActive(false);
@@ -26,46 +25,61 @@ public class MechanicalArm : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && !isChanged && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            ItemData selectedItem = ToolBarUI.Instance.GetSelectedItem();
+            if (isActivated) return;
 
-            if (selectedItem != null && selectedItem.itemID == requiredItemID)
+            int count = ToolBarUI.Instance.CountItem(requiredItemID);
+
+            if (count < requiredAmount)
             {
-                ChangeArm();
+                if (!hasShownHint)
+                {
+                    hasShownHint = true;
+
+                    TutorialDialogueManager.instance.StartDialogue(new string[]
+                    {
+                        "Instruction Manual:",
+                        "Install three parts to activate it.",
+                        "Look around for missing pieces."
+                    });
+                }
+                else
+                {
+                    TutorialDialogueManager.instance.StartDialogue(new string[]
+                    {
+                        "Still missing parts."
+                    });
+                }
             }
             else
             {
-                Debug.Log("You need a gear.");
+                ActivateArm();
             }
         }
     }
 
-    void ChangeArm()
+    void ActivateArm()
     {
-        isChanged = true;
+        isActivated = true;
 
-        if (normalMechanicalArm != null)
-            normalMechanicalArm.SetActive(false);
+        ToolBarUI.Instance.RemoveItems(requiredItemID, requiredAmount);
 
-        if (changeMechanicalArm != null)
-            changeMechanicalArm.SetActive(true);
+        normalMechanicalArm.SetActive(false);
+        changeMechanicalArm.SetActive(true);
 
         if (sound != null)
             sound.Play();
 
-        if (promptUI != null)
-            promptUI.SetActive(false);
+        promptUI.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isChanged)
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
-
-            if (promptUI != null)
-                promptUI.SetActive(true);
+            promptUI.SetActive(true);
         }
     }
 
@@ -74,9 +88,7 @@ public class MechanicalArm : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-
-            if (promptUI != null)
-                promptUI.SetActive(false);
+            promptUI.SetActive(false);
         }
     }
 }
