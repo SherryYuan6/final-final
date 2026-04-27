@@ -3,12 +3,7 @@ guid: 47199b22b362b834087ce08c4b4ab5c9
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: gear_1_mat_PBS
-    second: {fileID: 2100000, guid: db213491d822bed4681221a3d11f75e8, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
