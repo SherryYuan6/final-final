@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0423baffecf1df846899d724178dd156, type: 3}
+  m_Script: {fileID: 11500000, guid: 2320b117bc5e3644984fd377e4c179da, type: 3}
   m_Name: gear
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemID: gear
   Icon: {fileID: -2036053891, guid: d74cf0ebdd195a74a9847ebe7a34275c, type: 3}
-  consumeOnUse: 1
