@@ -4907,7 +4907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MechanicalArm
   requiredItemID: gear
   requiredAmount: 3
-  promptUI: {fileID: 0}
+  promptUI: {fileID: 724679981}
   normalMechanicalArm: {fileID: 6949514849656474599}
   changeMechanicalArm: {fileID: 2447099230831523775}
   sound: {fileID: 0}
@@ -4930,8 +4930,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.9300976, y: 2.9789639, z: 2.771591}
-  m_Center: {x: -1.7712426, y: 0.9894819, z: -0.09248756}
+  m_Size: {x: 4.9300976, y: 2.4722862, z: 2.771591}
+  m_Center: {x: -1.7712426, y: 0.7361431, z: -0.092487454}
 --- !u!1001 &421335786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11471,7 +11471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.657
+      value: -11.344
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
       propertyPath: m_LocalRotation.w
