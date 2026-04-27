@@ -33,6 +33,8 @@ public class BreakableCamera : MonoBehaviour
             if (selectedItem != null && selectedItem.itemID == requiredItemID)
             {
                 BreakCamera();
+
+                ToolBarUI.Instance.RemoveItems(requiredItemID, 1);
             }
             else
             {

@@ -52,6 +52,43 @@ public class ToolBarUI : MonoBehaviour
         {
             slots[i].SetSelected(i == selectedIndex);
         }
+
         Debug.Log("Selected slot: " + index);
+    }
+
+    public int CountItem(string itemID)
+    {
+        int count = 0;
+
+        foreach (ToolSlotUI slot in slots)
+        {
+            ItemData item = slot.GetItem();
+
+            if (item != null && item.itemID == itemID)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public void RemoveItems(string itemID, int amount)
+    {
+        int removed = 0;
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (removed >= amount)
+                return;
+
+            ItemData item = slots[i].GetItem();
+
+            if (item != null && item.itemID == itemID)
+            {
+                slots[i].ClearSlot();
+                removed++;
+            }
+        }
     }
 }
