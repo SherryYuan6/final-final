@@ -5,14 +5,22 @@ public class AutoLoadScene : MonoBehaviour
 {
     public string nextScene;
     public float delay = 5f;
-
     void Start()
     {
         Invoke(nameof(LoadNext), delay);
     }
 
+     private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+             LoadNext();
+        }
+    }
+
+
     void LoadNext()
     {
-        SceneManager.LoadScene("UI UX 2");
+        SceneManager.LoadScene("Labatotry");
     }
 }
