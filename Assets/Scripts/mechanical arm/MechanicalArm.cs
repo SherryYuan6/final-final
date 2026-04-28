@@ -8,6 +8,9 @@ public class MechanicalArm : MonoBehaviour
     public GameObject promptUI;
     public GameObject normalMechanicalArm;
     public GameObject changeMechanicalArm;
+
+    public GameObject hiddenPoster; // 机械臂启动后出现的海报
+
     public AudioSource sound;
 
     private bool playerInRange = false;
@@ -18,6 +21,9 @@ public class MechanicalArm : MonoBehaviour
     {
         normalMechanicalArm.SetActive(true);
         changeMechanicalArm.SetActive(false);
+
+        if (hiddenPoster != null)
+            hiddenPoster.SetActive(false);
 
         if (promptUI != null)
             promptUI.SetActive(false);
@@ -68,10 +74,14 @@ public class MechanicalArm : MonoBehaviour
         normalMechanicalArm.SetActive(false);
         changeMechanicalArm.SetActive(true);
 
+        if (hiddenPoster != null)
+            hiddenPoster.SetActive(true);
+
         if (sound != null)
             sound.Play();
 
-        promptUI.SetActive(false);
+        if (promptUI != null)
+            promptUI.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -79,7 +89,9 @@ public class MechanicalArm : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            promptUI.SetActive(true);
+
+            if (promptUI != null)
+                promptUI.SetActive(true);
         }
     }
 
@@ -88,7 +100,9 @@ public class MechanicalArm : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            promptUI.SetActive(false);
+
+            if (promptUI != null)
+                promptUI.SetActive(false);
         }
     }
 }

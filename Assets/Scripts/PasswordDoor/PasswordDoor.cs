@@ -3,7 +3,7 @@ using UnityEngine;
 public class PasswordDoor : MonoBehaviour
 {
     [Header("Password Settings")]
-    public string correctPassword = "12306";
+    public string correctPassword = " ";
 
     [Header("Door Models")]
     public GameObject DoorClose2;
