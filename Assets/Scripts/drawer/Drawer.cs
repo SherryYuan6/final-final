@@ -6,10 +6,11 @@ public class Drawer : MonoBehaviour
 
     [Header("Drawer Models")]
     public GameObject closeDrawer;
-    public GameObject openDrawer; 
-    
-    [Header("First Lock UI")]
+    public GameObject openDrawer;
+
+    [Header("Lock UI")]
     public GameObject drawerLockPanel;
+    public GameObject patternLockPanel;
 
     [Header("Small Box")]
     public GameObject chestVariant;
@@ -24,8 +25,11 @@ public class Drawer : MonoBehaviour
 
     void Start()
     {
-        closeDrawer.SetActive(true);
-        openDrawer.SetActive(false);
+        if (closeDrawer != null)
+            closeDrawer.SetActive(true);
+
+        if (openDrawer != null)
+            openDrawer.SetActive(false);
 
         if (chestVariant != null)
             chestVariant.SetActive(false);
@@ -35,16 +39,16 @@ public class Drawer : MonoBehaviour
 
         if (drawerLockPanel != null)
             drawerLockPanel.SetActive(false);
+
+        if (patternLockPanel != null)
+            patternLockPanel.SetActive(false);
     }
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && !isUnlocked && Input.GetKeyDown(KeyCode.E))
         {
-            if (!isUnlocked)
-            {
-                OpenDrawerLockUI();
-            }
+            OpenDrawerLockUI();
         }
     }
 
@@ -53,11 +57,10 @@ public class Drawer : MonoBehaviour
         if (drawerLockPanel != null)
             drawerLockPanel.SetActive(true);
 
-        foreach (MonoBehaviour script in scriptsToDisable)
-        {
-            if (script != null)
-                script.enabled = false;
-        }
+        if (promptUI != null)
+            promptUI.SetActive(false);
+
+        SetPlayerControl(false);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -66,37 +69,72 @@ public class Drawer : MonoBehaviour
     public void UnlockDrawer()
     {
         isUnlocked = true;
+        playerInRange = false;
 
         if (drawerLockPanel != null)
             drawerLockPanel.SetActive(false);
 
-        closeDrawer.SetActive(false);
-        openDrawer.SetActive(true);
+        if (promptUI != null)
+            promptUI.SetActive(false);
+
+        if (closeDrawer != null)
+            closeDrawer.SetActive(false);
+
+        if (openDrawer != null)
+            openDrawer.SetActive(true);
 
         if (chestVariant != null)
             chestVariant.SetActive(true);
 
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+            col.enabled = false;
+
         if (sound != null)
             sound.Play();
 
-        foreach (MonoBehaviour script in scriptsToDisable)
+        if (patternLockPanel != null)
         {
-            if (script != null)
-                script.enabled = true;
+            patternLockPanel.SetActive(true);
+
+            SetPlayerControl(false);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            return;
         }
+
+        FinishPatternLock();
+    }
+
+    public void FinishPatternLock()
+    {
+        if (patternLockPanel != null)
+            patternLockPanel.SetActive(false);
+
+        SetPlayerControl(true);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
+    void SetPlayerControl(bool enabled)
+    {
+        foreach (MonoBehaviour script in scriptsToDisable)
+        {
+            if (script != null)
+                script.enabled = enabled;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isUnlocked)
         {
             playerInRange = true;
 
-            if (!isUnlocked && promptUI != null)
+            if (promptUI != null)
                 promptUI.SetActive(true);
         }
     }
@@ -109,6 +147,9 @@ public class Drawer : MonoBehaviour
 
             if (promptUI != null)
                 promptUI.SetActive(false);
+
+            if (drawerLockPanel != null && drawerLockPanel.activeSelf)
+                drawerLockPanel.SetActive(false);
         }
     }
 }

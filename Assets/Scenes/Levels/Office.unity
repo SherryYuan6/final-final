@@ -410,7 +410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32154877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7f0895af34ed394890e7b587f52320e, type: 3}
   m_Name: 
@@ -424,8 +424,7 @@ MonoBehaviour:
   - {fileID: 748507584}
   - {fileID: 551373549}
   messageText: {fileID: 550092305}
-  cluePanel: {fileID: 1969994528}
-  promptUI: {fileID: 0}
+  promptUI: {fileID: 724679981}
 --- !u!114 &32154880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,6 +2012,22 @@ PrefabInstance:
     - target: {fileID: 2447099228734753321, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
       propertyPath: m_Name
       value: Mechanical arm 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732689778388202510, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2952268
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732689778388202510, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
+      propertyPath: m_Center.x
+      value: -0.37785146
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732689778388202510, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.9535488
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732689778388202510, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.03750276
       objectReference: {fileID: 0}
     - target: {fileID: 6831924419352571063, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6434,6 +6449,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5037788537974310848, guid: 9543de9f05a251d45b623047354113f3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037788537974310848, guid: 9543de9f05a251d45b623047354113f3, type: 3}
       propertyPath: interactHint
       value: 
       objectReference: {fileID: 232958887}
@@ -6441,6 +6460,10 @@ PrefabInstance:
       propertyPath: patternLockPanel
       value: 
       objectReference: {fileID: 232958887}
+    - target: {fileID: 6679939825334097603, guid: 9543de9f05a251d45b623047354113f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6679939825334097603, guid: 9543de9f05a251d45b623047354113f3, type: 3}
       propertyPath: panelToClose
       value: 
@@ -14257,6 +14280,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1045991180234211845, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: drawer
+      value: 
+      objectReference: {fileID: 1848683634}
+    - target: {fileID: 5109314998014718738, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5652616085218631538, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -19829,7 +19860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712043609319385231, guid: a07dffe36c92aec44a95c900438af993, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2005925935070226954, guid: a07dffe36c92aec44a95c900438af993, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20236,6 +20267,7 @@ MonoBehaviour:
   closeDrawer: {fileID: 1229809147}
   openDrawer: {fileID: 219895079}
   drawerLockPanel: {fileID: 32154877}
+  patternLockPanel: {fileID: 232958887}
   chestVariant: {fileID: 843246792}
   scriptsToDisable:
   - {fileID: 1855227275}

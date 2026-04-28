@@ -11,7 +11,6 @@ public class LockBoxDialPassword : MonoBehaviour
     public Drawer drawer;
     public TMP_Text[] digitTexts;
     public TMP_Text messageText;
-    //public GameObject cluePanel;
 
     [Header("Prompt")]
     public GameObject promptUI;
@@ -22,15 +21,16 @@ public class LockBoxDialPassword : MonoBehaviour
 
     void Start()
     {
-        lockBoxPanel.SetActive(false);
-
-        //if (cluePanel != null)
-            //cluePanel.SetActive(false);
+        if (lockBoxPanel != null)
+            lockBoxPanel.SetActive(false);
 
         if (promptUI != null)
             promptUI.SetActive(false);
 
         UpdateDigitUI();
+
+        if (messageText != null)
+            messageText.text = "";
     }
 
     void Update()
@@ -43,8 +43,15 @@ public class LockBoxDialPassword : MonoBehaviour
 
     public void OpenLockUI()
     {
-        lockBoxPanel.SetActive(true);
-        messageText.text = "";
+        if (lockBoxPanel != null)
+            lockBoxPanel.SetActive(true);
+
+        if (promptUI != null)
+            promptUI.SetActive(false);
+
+        if (messageText != null)
+            messageText.text = "";
+
         UpdateDigitUI();
 
         Cursor.lockState = CursorLockMode.None;
@@ -53,7 +60,8 @@ public class LockBoxDialPassword : MonoBehaviour
 
     public void CloseLockUI()
     {
-        lockBoxPanel.SetActive(false);
+        if (lockBoxPanel != null)
+            lockBoxPanel.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -61,6 +69,9 @@ public class LockBoxDialPassword : MonoBehaviour
 
     public void IncreaseDigit(int index)
     {
+        if (index < 0 || index >= digits.Length)
+            return;
+
         digits[index]++;
 
         if (digits[index] > 9)
@@ -72,6 +83,9 @@ public class LockBoxDialPassword : MonoBehaviour
 
     public void DecreaseDigit(int index)
     {
+        if (index < 0 || index >= digits.Length)
+            return;
+
         digits[index]--;
 
         if (digits[index] < 0)
@@ -83,9 +97,10 @@ public class LockBoxDialPassword : MonoBehaviour
 
     void UpdateDigitUI()
     {
-        for (int i = 0; i < digitTexts.Length; i++)
+        for (int i = 0; i < digitTexts.Length && i < digits.Length; i++)
         {
-            digitTexts[i].text = digits[i].ToString();
+            if (digitTexts[i] != null)
+                digitTexts[i].text = digits[i].ToString();
         }
     }
 
@@ -104,26 +119,27 @@ public class LockBoxDialPassword : MonoBehaviour
         }
         else
         {
-            messageText.text = "Wrong password.";
+            if (messageText != null)
+                messageText.text = "Wrong password.";
         }
     }
 
     void UnlockBox()
     {
         isUnlocked = true;
+        playerInRange = false;
 
-        lockBoxPanel.SetActive(false);
-
-        //if (cluePanel != null)
-            //cluePanel.SetActive(true);
+        if (lockBoxPanel != null)
+            lockBoxPanel.SetActive(false);
 
         if (promptUI != null)
             promptUI.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (messageText != null)
+            messageText.text = "";
 
-        drawer.UnlockDrawer();
+        if (drawer != null)
+            drawer.UnlockDrawer();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -146,7 +162,7 @@ public class LockBoxDialPassword : MonoBehaviour
             if (promptUI != null)
                 promptUI.SetActive(false);
 
-            if (lockBoxPanel.activeSelf)
+            if (lockBoxPanel != null && lockBoxPanel.activeSelf)
                 CloseLockUI();
         }
     }
