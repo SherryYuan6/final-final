@@ -9256,6 +9256,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7567103768967235817, guid: f9a1a5c1a73edba4e8a191866f65123e, type: 3}
   m_PrefabInstance: {fileID: 775130337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &780546361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6242589893423615383, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+  m_PrefabInstance: {fileID: 1321188743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &780546365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780546361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e94ec27d4b2cda4ea398d2778e4b173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelCursorUnlock
 --- !u!1001 &795784612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13474,6 +13491,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e128a538516e84fb3041f809372059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimplePanClose
+--- !u!114 &1262235557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5037788537974310848, guid: 9543de9f05a251d45b623047354113f3, type: 3}
+  m_PrefabInstance: {fileID: 526344051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843246792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67e542ac2e2f3845b8919749aadd88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PatternBoxInteract
 --- !u!4 &1262235560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 257825683012463895, guid: 9543de9f05a251d45b623047354113f3, type: 3}
@@ -14284,17 +14312,33 @@ PrefabInstance:
       propertyPath: drawer
       value: 
       objectReference: {fileID: 1848683634}
+    - target: {fileID: 2568546878031681653, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1262235556}
+    - target: {fileID: 2568546878031681653, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568546878031681653, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SimplePanClose, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5109314998014718738, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5652616085218631538, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7898239013966641358, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_Name
       value: PatternBoxUI  Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898239013966641358, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961032724052247131, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14339,15 +14383,22 @@ PrefabInstance:
     - target: {fileID: 8498762990902206066, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1262235556}
+      objectReference: {fileID: 1262235557}
     - target: {fileID: 8498762990902206066, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClosePanel
+      value: ClosePatternLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498762990902206066, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PatternBoxInteract, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6242589893423615383, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 780546365}
   m_SourcePrefab: {fileID: 100100000, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
 --- !u!1001 &1336174031
 PrefabInstance:

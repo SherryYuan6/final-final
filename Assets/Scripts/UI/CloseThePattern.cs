@@ -10,6 +10,6 @@ public class SimplePanClose : MonoBehaviour
             panelToClose.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;  
+        Cursor.visible = true;  
         }
 }
