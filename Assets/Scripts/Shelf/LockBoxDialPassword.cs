@@ -8,9 +8,10 @@ public class LockBoxDialPassword : MonoBehaviour
 
     [Header("UI")]
     public GameObject lockBoxPanel;
+    public Drawer drawer;
     public TMP_Text[] digitTexts;
     public TMP_Text messageText;
-    public GameObject cluePanel;
+    //public GameObject cluePanel;
 
     [Header("Prompt")]
     public GameObject promptUI;
@@ -23,8 +24,8 @@ public class LockBoxDialPassword : MonoBehaviour
     {
         lockBoxPanel.SetActive(false);
 
-        if (cluePanel != null)
-            cluePanel.SetActive(false);
+        //if (cluePanel != null)
+            //cluePanel.SetActive(false);
 
         if (promptUI != null)
             promptUI.SetActive(false);
@@ -113,14 +114,16 @@ public class LockBoxDialPassword : MonoBehaviour
 
         lockBoxPanel.SetActive(false);
 
-        if (cluePanel != null)
-            cluePanel.SetActive(true);
+        //if (cluePanel != null)
+            //cluePanel.SetActive(true);
 
         if (promptUI != null)
             promptUI.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        drawer.UnlockDrawer();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
