@@ -12,6 +12,9 @@ public class PatternLock : MonoBehaviour
     public GameObject lockPanel;
     public GameObject rewardPanel; // 打开后显示盒子里的线索/权限卡
 
+    [Header("After Unlock")]
+    public Drawer drawer;
+
     private List<string> playerInput = new List<string>();
 
     public void PressSymbol(string symbolName)
@@ -60,16 +63,20 @@ public class PatternLock : MonoBehaviour
     }
 
     private void UnlockBox()
-    {
-        Debug.Log("Pattern lock opened!");
+{
+    Debug.Log("Pattern lock opened!");
 
-        if (feedbackText != null)
-            feedbackText.text = "Unlocked.";
+    if (feedbackText != null)
+        feedbackText.text = "Unlocked.";
 
-        if (lockPanel != null)
-            lockPanel.SetActive(false);
+    if (lockPanel != null)
+        lockPanel.SetActive(false);
 
-        if (rewardPanel != null)
-            rewardPanel.SetActive(true);
-    }
+    if (rewardPanel != null)
+        rewardPanel.SetActive(true);
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+}
+
 }
