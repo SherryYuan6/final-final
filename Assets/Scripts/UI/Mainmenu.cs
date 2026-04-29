@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Office"); 
+        SceneManager.LoadScene("Tutorial"); 
     }
 
     public void QuitGame()
