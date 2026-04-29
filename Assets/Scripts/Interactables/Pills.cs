@@ -3,12 +3,13 @@ using UnityEngine;
 public class Pills : MonoBehaviour
 {
     public float healAmount = 25f;
-    public bool playerInRange = false;
     public bool destroyOnUse = true;
 
+    private static Pills currentPills;
+    public bool playerInRange = false;
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (currentPills == this && playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             UsePill();
         }
@@ -37,6 +38,7 @@ public class Pills : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            currentPills = this;
         }
     }
 
@@ -45,6 +47,10 @@ public class Pills : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            if (currentPills == this)
+            {
+                currentPills = null;
+            }
         }
     }
 }
