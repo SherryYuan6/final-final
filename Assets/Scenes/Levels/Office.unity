@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f0895af34ed394890e7b587f52320e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockBoxDialPassword
-  correctPassword: 0714
+  correctPassword: 0710
   lockBoxPanel: {fileID: 32154877}
   drawer: {fileID: 1848683634}
   digitTexts:
@@ -11985,7 +11985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3228768e6a8de488b879939e856094f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PasswordDoor
-  correctPassword: 'ARM09 '
+  correctPassword: 12345
   DoorClose2: {fileID: 0}
   DoorOpen2: {fileID: 0}
   promptUI: {fileID: 0}
@@ -12002,8 +12002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a3b6e697dc4544fa4cf284953bfd4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoLoadScene
-  nextScene: Labatory
-  delay: 5
 --- !u!1 &1021824758
 GameObject:
   m_ObjectHideFlags: 0
@@ -14026,7 +14024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3228768e6a8de488b879939e856094f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PasswordDoor
-  correctPassword: ARM09
+  correctPassword: 12345
   DoorClose2: {fileID: 1920505205}
   DoorOpen2: {fileID: 2404435199357322600}
   promptUI: {fileID: 724679981}
@@ -14487,6 +14485,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1469478237750364959, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477439477127144600, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
+      propertyPath: m_Text
+      value: '12345
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 4063564438273895493, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
       propertyPath: m_Name
       value: ComputerCanvas_level2 Variant
@@ -14569,6 +14577,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5822552770107430361, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487476475064443797, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
+      propertyPath: m_text
+      value: '12345
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984585567617014128, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074371463776261282, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
+      propertyPath: m_text
+      value: "233333\n\u200B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157235104802731718, guid: c5f9e88275926924c9b94e08a0b78878, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21535,6 +21561,10 @@ PrefabInstance:
     - target: {fileID: 5243887339097041906, guid: 6b8dca275f9636e48a359f99515f2357, type: 3}
       propertyPath: m_Name
       value: ComputerL2_Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243887339097041906, guid: 6b8dca275f9636e48a359f99515f2357, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7511295126425028410, guid: 6b8dca275f9636e48a359f99515f2357, type: 3}
       propertyPath: m_Pivot.x
