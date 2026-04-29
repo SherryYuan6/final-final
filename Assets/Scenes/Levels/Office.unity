@@ -13378,8 +13378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f7dfec81d75874c9642e4af7535510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decay
-  maxDecay: 100
-  currentDecay: 100
+  maxDecay: 300
+  currentDecay: 300
   passiveDecayRate: 1.695
   revealThreshold: 30
   decaySlider: {fileID: 1237046852}
