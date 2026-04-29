@@ -4536,6 +4536,8 @@ MonoBehaviour:
   DoorClose2: {fileID: 1920505205}
   DoorOpen2: {fileID: 2404435199357322600}
   promptUI: {fileID: 724679981}
+  nextSceneName: ' '
+  delayBeforeLoad: 1.5
   playerInRange: 0
 --- !u!4 &386562998 stripped
 Transform:
@@ -11989,6 +11991,8 @@ MonoBehaviour:
   DoorClose2: {fileID: 0}
   DoorOpen2: {fileID: 0}
   promptUI: {fileID: 0}
+  nextSceneName: ' '
+  delayBeforeLoad: 1.5
   playerInRange: 0
 --- !u!114 &1016349306
 MonoBehaviour:
@@ -14028,6 +14032,8 @@ MonoBehaviour:
   DoorClose2: {fileID: 1920505205}
   DoorOpen2: {fileID: 2404435199357322600}
   promptUI: {fileID: 724679981}
+  nextSceneName: Labatory
+  delayBeforeLoad: 1.5
   playerInRange: 0
 --- !u!1001 &1300095307
 PrefabInstance:

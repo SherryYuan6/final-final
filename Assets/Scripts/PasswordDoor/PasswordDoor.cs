@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PasswordDoor : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class PasswordDoor : MonoBehaviour
 
     [Header("UI")]
     public GameObject promptUI;
+
+    public string nextSceneName = " ";
+    public float delayBeforeLoad = 1.5f;
 
     [Header("Player Check")]
     public bool playerInRange = false;
@@ -47,8 +52,17 @@ public class PasswordDoor : MonoBehaviour
 
         if (promptUI != null)
             promptUI.SetActive(false);
-
+        StartCoroutine(LoadNextScene());
         Debug.Log("Door opened!");
+    }
+
+    private IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(delayBeforeLoad);
+        if (!string.IsNullOrEmpty(nextSceneName))
+            SceneManager.LoadScene(nextSceneName);
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ShowPrompt(bool show)
