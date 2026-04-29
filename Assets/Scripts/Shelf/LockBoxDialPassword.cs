@@ -15,6 +15,9 @@ public class LockBoxDialPassword : MonoBehaviour
     [Header("Prompt")]
     public GameObject promptUI;
 
+   [Header("Trigger")]
+   public Collider triggerCollider;
+
     private int[] digits = new int[4];
     private bool playerInRange = false;
     private bool isUnlocked = false;
@@ -31,6 +34,8 @@ public class LockBoxDialPassword : MonoBehaviour
 
         if (messageText != null)
             messageText.text = "";
+
+    Debug.Log("LockBox script attached on: " + gameObject.name);
     }
 
     void Update()
@@ -125,24 +130,33 @@ public class LockBoxDialPassword : MonoBehaviour
     }
 
     void UnlockBox()
+{
+    isUnlocked = true;
+    playerInRange = false;
+
+    if (lockBoxPanel != null)
+        lockBoxPanel.SetActive(false);
+
+    if (promptUI != null)
+        promptUI.SetActive(false);
+
+    if (messageText != null)
+        messageText.text = "";
+
+    if (triggerCollider != null)
+        triggerCollider.enabled = false;
+    else
     {
-        isUnlocked = true;
-        playerInRange = false;
-
-        if (lockBoxPanel != null)
-            lockBoxPanel.SetActive(false);
-
-        if (promptUI != null)
-            promptUI.SetActive(false);
-
-        if (messageText != null)
-            messageText.text = "";
-
-        if (drawer != null)
-            drawer.UnlockDrawer();
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+            col.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    if (drawer != null)
+        drawer.UnlockDrawer();
+}
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isUnlocked)
         {
@@ -153,7 +167,7 @@ public class LockBoxDialPassword : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {

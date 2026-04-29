@@ -18,6 +18,9 @@ public class Drawer : MonoBehaviour
     [Header("Disable while UI is open")]
     public MonoBehaviour[] scriptsToDisable;
 
+    [Header("Trigger")]
+    public Collider triggerCollider;
+
     public AudioSource sound;
 
     private bool playerInRange = false;
@@ -86,9 +89,15 @@ public class Drawer : MonoBehaviour
         if (chestVariant != null)
             chestVariant.SetActive(true);
 
-        Collider col = GetComponent<Collider>();
-        if (col != null)
-            col.enabled = false;
+        if (triggerCollider != null)
+        triggerCollider.enabled = false;
+        
+        else
+{
+    Collider col = GetComponent<Collider>();
+    if (col != null)
+        col.enabled = false;
+}
 
         if (sound != null)
             sound.Play();
