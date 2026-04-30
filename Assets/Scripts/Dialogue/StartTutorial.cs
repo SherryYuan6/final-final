@@ -7,9 +7,9 @@ public class StartTutorial : MonoBehaviour
     {
         string[] introLines = new string[]
         {
-            "Camera is watching...",
-            "I need to destroy it first.",
-            "Oh, there's a hammer nearby."
+            "There's a camera. They are probably watching...",
+            "I need to destroy it.",
+            "Oh, there's a axe."
         };
         TutorialDialogueManager.instance.StartDialogue(introLines);
     }
