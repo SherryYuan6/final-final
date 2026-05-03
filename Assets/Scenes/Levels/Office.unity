@@ -425,6 +425,7 @@ MonoBehaviour:
   - {fileID: 551373549}
   messageText: {fileID: 550092305}
   promptUI: {fileID: 724679981}
+  triggerCollider: {fileID: 0}
 --- !u!114 &32154880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14517,7 +14518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898239013966641358, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961032724052247131, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20531,6 +20532,7 @@ MonoBehaviour:
   patternLockPanel: {fileID: 232958887}
   chestVariant: {fileID: 843246792}
   scriptsToDisable: []
+  triggerCollider: {fileID: 0}
   sound: {fileID: 0}
 --- !u!1 &1855227273 stripped
 GameObject:
@@ -23105,7 +23107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2105443269
 Transform:
   m_ObjectHideFlags: 0
