@@ -6,19 +6,32 @@ public class ColorSequenceLock : MonoBehaviour
     [Header("Correct Sequence")]
     public string[] correctSequence = { "Red", "Blue", "Blue", "Yellow" };
 
-    [Header("Buttons")]
-    public ColorButton[] colorButtons;
-
     [Header("UI")]
     public TMP_Text feedbackText;
-
-    [Header("Unlock Result")]
     public GameObject puzzlePanel;
     public GameObject rewardPanel;
-    public GameObject objectToUnlock;
+
+    [Header("Glassware Models")]
+    public GameObject closeGlassware;
+    public GameObject openGlassware;
+
+    [Header("Interaction")]
+    public ColorPuzzleInteract interactScript;
 
     private int currentIndex = 0;
     private bool solved = false;
+
+    void Start()
+    {
+        if (closeGlassware != null)
+            closeGlassware.SetActive(true);
+
+        if (openGlassware != null)
+            openGlassware.SetActive(false);
+
+        if (rewardPanel != null)
+            rewardPanel.SetActive(false);
+    }
 
     public void PressColor(string colorID)
     {
@@ -54,8 +67,11 @@ public class ColorSequenceLock : MonoBehaviour
         if (feedbackText != null)
             feedbackText.text = "Unlocked!";
 
-        if (objectToUnlock != null)
-            objectToUnlock.SetActive(true);
+        if (closeGlassware != null)
+            closeGlassware.SetActive(false);
+
+        if (openGlassware != null)
+            openGlassware.SetActive(true);
 
         if (puzzlePanel != null)
             puzzlePanel.SetActive(false);
@@ -69,6 +85,5 @@ public class ColorSequenceLock : MonoBehaviour
     public void ResetPuzzle()
     {
         currentIndex = 0;
-
     }
 }
