@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ChipManager : MonoSingleton<ChipManager>
 {
     public float maxIntegrity = 100f;
-    public float currentIntegrity = 80f;
+    public float currentIntegrity = 100f;
     public float passiveDecayRate = 1.695f;
     public float revealThreshold = 50f;
 

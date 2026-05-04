@@ -10208,9 +10208,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94105490f7cdc6b4ab52b0b9e52fcef0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Decay
+  m_EditorClassIdentifier: Assembly-CSharp::ChipManager
   maxIntegrity: 100
-  currentIntegrity: 80
+  currentIntegrity: 100
   passiveDecayRate: 1.695
   revealThreshold: 50
   integritySlider: {fileID: 0}
@@ -10218,11 +10218,11 @@ MonoBehaviour:
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
   criticalColor: {r: 1, g: 0, b: 0, a: 1}
   fadeImage: {fileID: 0}
-  glitchMaterial: {fileID: 2100000, guid: f4272981a3897ce4c840d9e092fa5bd0, type: 2}
+  glitchMaterial: {fileID: 0}
   healthyLightColor: {r: 1, g: 0.95, b: 0.88, a: 1}
   brokenLightColor: {r: 0.3, g: 0.9, b: 1, a: 1}
-  healthyAmbient: {r: 0.4, g: 0.38, b: 0.35, a: 1}
-  brokenAmbient: {r: 0.05, g: 0.12, b: 0.2, a: 1}
+  healthyAmbient: {r: 0.52201253, g: 0.3212385, b: 0, a: 1}
+  brokenAmbient: {r: 0.55345905, g: 0.06530922, b: 0, a: 1}
   glitchAmbientLoop: {fileID: 0}
   glitchSpikeSound: {fileID: 0}
   spikeInterval: 8
