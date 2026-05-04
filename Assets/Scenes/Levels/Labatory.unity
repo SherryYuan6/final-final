@@ -2103,7 +2103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &380307976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5663,7 +5663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c286af7b853bf4c9c012185d965234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WrenchExitDoor
-  requiredBrokenPowerCount: 2
+  requiredBrokenPowerCount: 1
   requiredWrenchID: wrench
   closedDoor: {fileID: 687311762}
   openDoor: {fileID: 1539941888}
@@ -7803,7 +7803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1171483190
 RectTransform:
   m_ObjectHideFlags: 0
