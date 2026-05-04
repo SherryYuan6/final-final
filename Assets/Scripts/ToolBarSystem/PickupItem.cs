@@ -22,7 +22,7 @@ public class PickupItem : MonoBehaviour
             {
                 if (pickupDialogue != null && pickupDialogue.Length > 0)
                 {
-                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
+//                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
                 }
 
                 Destroy(gameObject);
