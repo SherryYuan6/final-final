@@ -12430,8 +12430,6 @@ MonoBehaviour:
   promptUI: {fileID: 724679981}
   normalCameraModel: {fileID: 1611978905}
   brokenCameraModel: {fileID: 32583838}
-  breakSound: {fileID: 0}
-  sparkEffect: {fileID: 0}
 --- !u!4 &1820044561
 Transform:
   m_ObjectHideFlags: 0

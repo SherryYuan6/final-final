@@ -1,10 +1,10 @@
 using UnityEngine;
-
 public class PickupItem : MonoBehaviour
 {
     public ItemData itemData;
     public GameObject promptUI;
 
+    [TextArea(2, 4)]
     public string[] pickupDialogue;
 
     public void PickUp()
@@ -19,7 +19,7 @@ public class PickupItem : MonoBehaviour
             {
                 if (pickupDialogue != null && pickupDialogue.Length > 0)
                 {
-                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
+//                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
                 }
 
                 Destroy(gameObject);

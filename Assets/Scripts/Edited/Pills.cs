@@ -17,14 +17,14 @@ public class Pills : MonoBehaviour
 
     public void UsePill()
     {
-        if (Decay.Instance != null)
+        if (ChipManager.Instance != null)
         {
-            Decay.Instance.AddCognitive(healAmount);
-            Debug.Log("Pill used. Sanity +" + healAmount);
-        }
-        else
-        {
-            Debug.LogWarning("Decay.Instance is null");
+            ChipManager.Instance.AddCognitive(healAmount);
+        //    Debug.Log("Pill used. Sanity +" + healAmount);
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("Decay.Instance is null");
         }
 
         if (destroyOnUse)

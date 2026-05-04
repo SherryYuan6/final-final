@@ -3,21 +3,28 @@ using UnityEngine;
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
-    public static T instance
+    public static T Instance
     {
         get
         {
             if (_instance == null)
-            {
-
                 _instance = FindFirstObjectByType<T>();
-                if (_instance != null)
-                {
-                    var go = new GameObject(" " + typeof(T));
-                    _instance = go.AddComponent<T>();
-                }
+                return _instance;
             }
-            return _instance;
         }
+        protected virtual void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this as T;
+    }
+
+    protected virtual void OnDestroy()
+    {
+        if (_instance == this)
+            _instance = null;
     }
 }

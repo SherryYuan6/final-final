@@ -4115,8 +4115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9789944976827e4a81f1a2dc64e3dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComputerInteract
-  passwordPanel: {fileID: 0}
-  passwordInputField: {fileID: 0}
+  passwordPanel: {fileID: 4793945}
+  passwordInputField: {fileID: 1683820874}
 --- !u!65 &479898112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7116,23 +7116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &780546361 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6242589893423615383, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
-  m_PrefabInstance: {fileID: 1321188743}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &780546365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780546361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e94ec27d4b2cda4ea398d2778e4b173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PanelCursorUnlock
 --- !u!1 &781538019
 GameObject:
   m_ObjectHideFlags: 0
@@ -9364,18 +9347,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237046849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f7dfec81d75874c9642e4af7535510, type: 3}
+  m_Script: {fileID: 11500000, guid: 94105490f7cdc6b4ab52b0b9e52fcef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decay
-  maxDecay: 300
-  currentDecay: 300
+  maxIntegrity: 100
+  currentIntegrity: 80
   passiveDecayRate: 1.695
-  revealThreshold: 30
-  decaySlider: {fileID: 1237046852}
-  sliderFill: {fileID: 1833542594}
+  revealThreshold: 50
+  integritySlider: {fileID: 0}
+  sliderFill: {fileID: 0}
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
-  dangerColor: {r: 1, g: 0, b: 0, a: 1}
+  criticalColor: {r: 1, g: 0, b: 0, a: 1}
   fadeImage: {fileID: 0}
+  glitchMaterial: {fileID: 0}
+  healthyLightColor: {r: 1, g: 0.95, b: 0.88, a: 1}
+  brokenLightColor: {r: 0.3, g: 0.9, b: 1, a: 1}
+  healthyAmbient: {r: 0.4, g: 0.38, b: 0.35, a: 1}
+  brokenAmbient: {r: 0.05, g: 0.12, b: 0.2, a: 1}
+  glitchAmbientLoop: {fileID: 0}
+  glitchSpikeSound: {fileID: 0}
+  spikeInterval: 8
+  spikeProbability: 0.35
+  spikeDuration: 0.4
+  endSceneName: End Screen
 --- !u!114 &1237046852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10145,13 +10139,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PatternBoxInteract, Assembly-CSharp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3306759237263857746, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6242589893423615383, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 780546365}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
 --- !u!4 &1321188744 stripped
 Transform:
