@@ -8,10 +8,12 @@ public class WirePuzzleLock : MonoBehaviour
     public string[] correctSequence =
     {
         "Blue",
+        "Red",
+        "Pink",
         "Yellow",
         "Green",
-        "Pink",
-        "Red"
+        
+        
     };
 
     [Header("UI References")]
@@ -21,6 +23,25 @@ public class WirePuzzleLock : MonoBehaviour
 
     private List<string> playerInput = new List<string>();
     private bool isUnlocked = false;
+
+    void Update()
+{
+    if (shutdownProtocolPanel != null 
+        && shutdownProtocolPanel.activeSelf 
+        && Input.GetKeyDown(KeyCode.Escape))
+    {
+        CloseShutdownProtocol();
+        return;
+    }
+
+    if (wirePuzzlePanel != null 
+        && wirePuzzlePanel.activeSelf 
+        && Input.GetKeyDown(KeyCode.Escape))
+    {
+        CloseWirePuzzle();
+        return;
+    }
+}
 
     public void PressWire(string wireColor)
     {
