@@ -9354,14 +9354,14 @@ MonoBehaviour:
   currentIntegrity: 80
   passiveDecayRate: 1.695
   revealThreshold: 50
-  integritySlider: {fileID: 0}
+  integritySlider: {fileID: 1237046852}
   sliderFill: {fileID: 0}
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
   criticalColor: {r: 1, g: 0, b: 0, a: 1}
   fadeImage: {fileID: 0}
-  glitchMaterial: {fileID: 0}
+  glitchMaterial: {fileID: 2100000, guid: f4272981a3897ce4c840d9e092fa5bd0, type: 2}
   healthyLightColor: {r: 1, g: 0.95, b: 0.88, a: 1}
-  brokenLightColor: {r: 0.3, g: 0.9, b: 1, a: 1}
+  brokenLightColor: {r: 0, g: 0, b: 0, a: 1}
   healthyAmbient: {r: 0.4, g: 0.38, b: 0.35, a: 1}
   brokenAmbient: {r: 0.05, g: 0.12, b: 0.2, a: 1}
   glitchAmbientLoop: {fileID: 0}
@@ -10150,6 +10150,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7961032724052247131, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
   m_PrefabInstance: {fileID: 1321188743}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1330728439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330728443}
+  - component: {fileID: 1330728442}
+  - component: {fileID: 1330728441}
+  - component: {fileID: 1330728440}
+  m_Layer: 0
+  m_Name: ChipManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1330728440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330728439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db3d761c300a2f47b55030c499e0ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::audio2
+  cleanAmbience: {fileID: 0}
+  realAmbience: {fileID: 0}
+  crossfadeSpeed: 0.5
+--- !u!114 &1330728441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330728439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7da35b128f0f2c4c965df271faa1ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionManager
+  firstSceneName: Tutorial
+--- !u!114 &1330728442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330728439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94105490f7cdc6b4ab52b0b9e52fcef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decay
+  maxIntegrity: 100
+  currentIntegrity: 80
+  passiveDecayRate: 1.695
+  revealThreshold: 50
+  integritySlider: {fileID: 0}
+  sliderFill: {fileID: 0}
+  healthyColor: {r: 0, g: 1, b: 0, a: 1}
+  criticalColor: {r: 1, g: 0, b: 0, a: 1}
+  fadeImage: {fileID: 0}
+  glitchMaterial: {fileID: 2100000, guid: f4272981a3897ce4c840d9e092fa5bd0, type: 2}
+  healthyLightColor: {r: 1, g: 0.95, b: 0.88, a: 1}
+  brokenLightColor: {r: 0.3, g: 0.9, b: 1, a: 1}
+  healthyAmbient: {r: 0.4, g: 0.38, b: 0.35, a: 1}
+  brokenAmbient: {r: 0.05, g: 0.12, b: 0.2, a: 1}
+  glitchAmbientLoop: {fileID: 0}
+  glitchSpikeSound: {fileID: 0}
+  spikeInterval: 8
+  spikeProbability: 0.35
+  spikeDuration: 0.4
+  endSceneName: End Screen
+--- !u!4 &1330728443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330728439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.08256, y: 3.51751, z: 42.32877}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1336174031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13647,7 +13741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1766603542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21531,3 +21625,4 @@ SceneRoots:
   - {fileID: 2021461967}
   - {fileID: 910641942}
   - {fileID: 576063550}
+  - {fileID: 1330728443}
