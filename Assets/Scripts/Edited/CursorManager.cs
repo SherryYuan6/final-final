@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public static class CursorManager
+public class CursorManager : MonoBehaviour
 {
     public static bool IsUnlocked { get; private set; }
     public static void Lock()

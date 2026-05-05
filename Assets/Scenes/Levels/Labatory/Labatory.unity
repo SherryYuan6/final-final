@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 2c08892d4c198804bb289fa26f120254, type: 3}
       propertyPath: m_Name
-      value: double_open_end_wrench
+      value: wrench
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 2c08892d4c198804bb289fa26f120254, type: 3}
       propertyPath: m_IsActive
@@ -361,8 +361,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 2c08892d4c198804bb289fa26f120254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 41062008}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 2c08892d4c198804bb289fa26f120254, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 41062007}
   m_SourcePrefab: {fileID: 100100000, guid: 2c08892d4c198804bb289fa26f120254, type: 3}
+--- !u!1 &41062006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2c08892d4c198804bb289fa26f120254, type: 3}
+  m_PrefabInstance: {fileID: 41062005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &41062007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41062006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: 6be40a207776744f2baf8d637e6394e3, type: 2}
+  promptUI: {fileID: 95558828}
+  pickupDialogue: []
+--- !u!65 &41062008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41062006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12585808, y: 0.19200377, z: 0.12919743}
+  m_Center: {x: 0.006809293, y: -0.023174617, z: -0.052313972}
 --- !u!1 &41130539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,7 +2103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &380307976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2823,7 +2870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 731, y: -129}
+  m_AnchoredPosition: {x: -702, y: -129}
   m_SizeDelta: {x: 44.488, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417046400
@@ -3739,7 +3786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1451, y: 0}
+  m_AnchoredPosition: {x: -1459, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &616248976
@@ -5616,7 +5663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c286af7b853bf4c9c012185d965234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WrenchExitDoor
-  requiredBrokenPowerCount: 2
+  requiredBrokenPowerCount: 1
   requiredWrenchID: wrench
   closedDoor: {fileID: 687311762}
   openDoor: {fileID: 1539941888}
@@ -7756,7 +7803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1171483190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11277,7 +11324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 735, y: 45}
+  m_AnchoredPosition: {x: -697.99994, y: 45}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875855119

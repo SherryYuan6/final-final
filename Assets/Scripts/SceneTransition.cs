@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionManager : MonoSingleton<SceneTransitionManager>
 {
     public string firstSceneName = "Tutorial";
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-        ChipManager chip = GetComponent<ChipManager>();
-        if (chip != null) DontDestroyOnLoad(chip.gameObject);
-    }
+    //void Start()
+    //{
+    //    DontDestroyOnLoad(gameObject);
+    //    ChipManager chip = GetComponent<ChipManager>();
+    //    if (chip != null) DontDestroyOnLoad(chip.gameObject);
+    //}
     public void StartGame()
     {
         SceneManager.LoadScene(firstSceneName);
