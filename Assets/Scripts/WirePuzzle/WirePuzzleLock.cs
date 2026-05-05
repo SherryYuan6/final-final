@@ -43,6 +43,8 @@ public class WirePuzzleLock : MonoBehaviour
     }
 }
 
+
+
     public void PressWire(string wireColor)
     {
         if (isUnlocked) return;
@@ -53,7 +55,7 @@ public class WirePuzzleLock : MonoBehaviour
 
         if (feedbackText != null)
         {
-            feedbackText.text = "Input: " + playerInput.Count + " / " + correctSequence.Length;
+            feedbackText.text = "Signal accepted.";
         }
 
         CheckCurrentInput();
