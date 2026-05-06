@@ -7567,25 +7567,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stability Index = |Input Port - Output Port|
+  m_text: 'SIGNAL RECOVERY NOTE
 
-    Lower index first.
+    
 
+    The straighter the connection, the more
+    stable the signal.
 
-
-    If
-    two wires share the same index:
-
-    Total Load = Input Port + Output Port.
-
-    Lower
-    load goes first.
-
-
-
-    If still tied:
-
-    Lower Input Port goes first.'
+    Reconnect the wires from most aligned to most displaced.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
