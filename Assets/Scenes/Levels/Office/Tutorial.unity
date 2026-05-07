@@ -553,9 +553,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1855227274}
-    - targetCorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1855227281}
     - targetCorrespondingSourceObject: {fileID: 1593727746557118, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 65615319}
@@ -884,9 +881,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 142111949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c33349cd64cee949827d866aba85331, type: 3}
+  m_Script: {fileID: 11500000, guid: cdff58d0ab3faa344a910814378e6e7f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FolderClueReveal
+  m_EditorClassIdentifier: '::'
+  folderHintPanel: {fileID: 253794812}
+  wrongHint: {fileID: 1785903189}
+  trueHint: {fileID: 1651480396}
 --- !u!4 &151908010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3193946160588618884, guid: 4ab19bfbeb9048a45a44b9ce3847f750, type: 3}
@@ -4987,7 +4987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &724679982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6238,7 +6238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -698, y: 25}
+  m_AnchoredPosition: {x: -600, y: 25}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880044019
@@ -8991,10 +8991,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94105490f7cdc6b4ab52b0b9e52fcef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decay
-  maxIntegrity: 100
-  currentIntegrity: 100
+  maxIntegrity: 200
+  currentIntegrity: 200
   passiveDecayRate: 1.695
-  revealThreshold: 50
+  revealThreshold: 150
   integritySlider: {fileID: 880044019}
   sliderFill: {fileID: 498205100}
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
@@ -10286,9 +10286,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142111954}
-        m_TargetAssemblyTypeName: FolderClueReveal, Assembly-CSharp
-        m_MethodName: OpenClue
+      - m_Target: {fileID: 253794814}
+        m_TargetAssemblyTypeName: FolderUI, Assembly-CSharp
+        m_MethodName: OpenFolderHint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13481,18 +13481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1260113bb09fdef4194ec5bfb4bb38f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPickup
---- !u!114 &1855227281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855227273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4de243281dc708438886e743035c152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
 --- !u!1001 &1863002740
 PrefabInstance:
   m_ObjectHideFlags: 0
