@@ -1578,7 +1578,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 147276395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 32154879}
+        m_TargetAssemblyTypeName: LockBoxDialPassword, Assembly-CSharp
+        m_MethodName: CloseLockUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &147276395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14508,7 +14520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5652616085218631538, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7898239013966641358, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_Name
@@ -14516,7 +14528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898239013966641358, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7961032724052247131, guid: 8bab2d6f38fe3aa4d987f0b9c9ab31f4, type: 3}
       propertyPath: m_LocalPosition.x
