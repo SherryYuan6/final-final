@@ -1631,6 +1631,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3183243331945252524, guid: 8044d70d61b6da74295c6d963edab597, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1051916328}
+    - targetCorrespondingSourceObject: {fileID: 3183243331945252524, guid: 8044d70d61b6da74295c6d963edab597, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1051916331}
   m_SourcePrefab: {fileID: 100100000, guid: 8044d70d61b6da74295c6d963edab597, type: 3}
 --- !u!1 &253794812
 GameObject:
@@ -7797,6 +7800,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: -0.0032104552, y: 0.4591884, z: 0.04989193}
+--- !u!114 &1051916331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051916319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: 8fa192d9d4995ed408ce8a9a614022c4, type: 2}
+  promptUI: {fileID: 0}
+  pickupDialogue: []
 --- !u!1 &1053463814
 GameObject:
   m_ObjectHideFlags: 0
@@ -12623,6 +12641,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1998798711}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998798717}
   m_SourcePrefab: {fileID: 100100000, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
 --- !u!1001 &1722976418
 PrefabInstance:
@@ -13294,6 +13315,7 @@ GameObject:
   - component: {fileID: 1820044561}
   - component: {fileID: 1820044560}
   - component: {fileID: 1820044562}
+  - component: {fileID: 1820044563}
   m_Layer: 0
   m_Name: CameraBroken
   m_TagString: Untagged
@@ -13355,6 +13377,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.63414574, y: 1.279999, z: 0.75629973}
   m_Center: {x: 0.14788198, y: 0.618945, z: -0.13694108}
+--- !u!114 &1820044563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820044559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0d7161ac0baed4a9bfd1fb7c527f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  requiredItemID: hammer
+  onSuccess:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1840167004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13941,8 +13979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pills
   healAmount: 25
-  destroyOnUse: 1
-  playerInRange: 1
 --- !u!65 &1998798711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13969,6 +14005,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
   m_PrefabInstance: {fileID: 1713689767}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998798717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998798709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: 20bc57381289a66428dfb2b36f0904c3, type: 2}
+  promptUI: {fileID: 0}
+  pickupDialogue: []
 --- !u!1001 &2001939903
 PrefabInstance:
   m_ObjectHideFlags: 0

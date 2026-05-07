@@ -10,6 +10,10 @@ public class ToolBarUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].Init(i);
+        }
     }
 
     public bool AddItem(ItemData itemData)
@@ -41,7 +45,7 @@ public class ToolBarUI : MonoBehaviour
         return slots[selectedIndex].GetItem();
     }
 
-public void UseSelectedItem()
+public void UseSelectedItem(GameObject target = null)
 {
     Debug.Log("UseSelectedItem called");
 
@@ -57,9 +61,9 @@ public void UseSelectedItem()
 
     if (selectedItem.itemID == "Pills")
     {
-        if (Decay.Instance != null)
+        if (ChipManager.Instance != null)
         {
-            Decay.Instance.AddCognitive(selectedItem.cognitiveRestoreAmount);
+            ChipManager.Instance.AddCognitive(selectedItem.cognitiveRestoreAmount);
             Debug.Log("Used pills. Cognitive +" + selectedItem.cognitiveRestoreAmount);
         }
         else
@@ -73,10 +77,33 @@ public void UseSelectedItem()
     else
     {
         Debug.Log("Selected item is not usable: " + selectedItem.itemID);
+        UseItemOnTarget(selectedItem, target);
+        }
     }
-}
 
-public void RemoveSelectedItem()
+    private void UseItemOnTarget(ItemData item, GameObject target)
+    {
+        if (target == null)
+        {
+            Debug.Log("No target clicked.");
+            return;
+        }
+
+        Interactable interactable = target.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            bool success = interactable.InteractWith(item);
+            if (success && item.consumeOnUse)
+                RemoveSelectedItem();
+        }
+        else
+        {
+            Debug.Log(target.name + " is not interactable.");
+        }
+    }
+
+
+    public void RemoveSelectedItem()
 {
     if (selectedIndex < 0 || selectedIndex >= slots.Length)
     {

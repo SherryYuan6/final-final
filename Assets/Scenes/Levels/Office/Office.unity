@@ -7587,8 +7587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pills
   healAmount: 25
-  destroyOnUse: 1
-  playerInRange: 1
 --- !u!65 &910641948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11498,6 +11496,10 @@ PrefabInstance:
       propertyPath: key
       value: 282
       objectReference: {fileID: 0}
+    - target: {fileID: 136877096903737240, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14865,8 +14867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pills
   healAmount: 25
-  destroyOnUse: 1
-  playerInRange: 1
 --- !u!65 &2021461973
 BoxCollider:
   m_ObjectHideFlags: 0

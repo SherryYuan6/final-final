@@ -5,6 +5,18 @@ public class ToolSlotUI : MonoBehaviour
     public Image itemIcon;
     private ItemData currentItem;
     public GameObject highlight;
+    private int slotIndex;
+    public void Init(int index)
+    {
+        slotIndex = index;
+    }
+
+    public void OnSlotClicked()
+    {
+        ToolBarUI.Instance.SelectSlot(slotIndex);
+        ToolBarUI.Instance.UseSelectedItem();
+    }
+
     public void SetItem(ItemData item)
     {
         currentItem = item;

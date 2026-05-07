@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -8,24 +9,34 @@ public class PlayerPickup : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E pressed");
+            //Debug.Log("E pressed");
 
             if (currentItem != null)
             {
-                Debug.Log("Picking up item: " + currentItem.name);
+                //Debug.Log("Picking up item: " + currentItem.name);
                 currentItem.PickUp();
             }
             else
             {
-                Debug.Log("Trying to use selected toolbar item");
+                ToolBarUI.Instance?.UseSelectedItem();
+            }
 
-                if (ToolBarUI.Instance != null)
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, 10f))
                 {
-                    ToolBarUI.Instance.UseSelectedItem();
-                }
-                else
-                {
-                    Debug.LogWarning("ToolBarUI.Instance is null");
+                    ToolBarUI.Instance?.UseSelectedItem(hit.collider.gameObject);
+                    //Debug.Log("Trying to use selected toolbar item");
+
+                    //if (ToolBarUI.Instance != null)
+                    //{
+                    //    ToolBarUI.Instance.UseSelectedItem();
+                    //}
+                    //else
+                    //{
+                    //    Debug.LogWarning("ToolBarUI.Instance is null");
+                    //}
                 }
             }
         }

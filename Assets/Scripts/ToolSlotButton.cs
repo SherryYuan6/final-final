@@ -10,6 +10,7 @@ public class ToolSlotButton : MonoBehaviour, IPointerClickHandler
         if (ToolBarUI.Instance != null)
         {
             ToolBarUI.Instance.SelectSlot(slotIndex);
+            ToolBarUI.Instance.UseSelectedItem();
         }
     }
 }
