@@ -55,7 +55,7 @@ public void UseSelectedItem()
 
     Debug.Log("Selected item ID: " + selectedItem.itemID);
 
-    if (selectedItem.itemID == "Pills")
+    if (selectedItem.itemID == "pills")
     {
         if (Decay.Instance != null)
         {
