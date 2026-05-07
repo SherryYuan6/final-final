@@ -10725,6 +10725,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
       insertIndex: -1
       addedObject: {fileID: 910641948}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910641949}
   m_SourcePrefab: {fileID: 100100000, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
 --- !u!1 &910641943 stripped
 GameObject:
@@ -10765,6 +10768,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0.068398155, z: 0}
+--- !u!114 &910641949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910641943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: 20bc57381289a66428dfb2b36f0904c3, type: 2}
+  promptUI: {fileID: 724679981}
+  pickupDialogue: []
 --- !u!1001 &912332169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22140,6 +22158,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2021461973}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2021461974}
   m_SourcePrefab: {fileID: 100100000, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
 --- !u!1 &2021461968 stripped
 GameObject:
@@ -22180,6 +22201,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0.068398155, z: 0}
+--- !u!114 &2021461974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021461968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: 20bc57381289a66428dfb2b36f0904c3, type: 2}
+  promptUI: {fileID: 724679981}
+  pickupDialogue:
+  - U'dBetter use it when needed.
 --- !u!1001 &2052132903
 PrefabInstance:
   m_ObjectHideFlags: 0
