@@ -1484,9 +1484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c33349cd64cee949827d866aba85331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FolderClueReveal
-  folderHintPanel: {fileID: 253794812}
-  wrongHint: {fileID: 1785903189}
-  trueHint: {fileID: 1651480396}
 --- !u!1 &144265820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7694977423377730395, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
@@ -12350,6 +12347,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2839227496418384918, guid: 8044d70d61b6da74295c6d963edab597, type: 3}
   m_PrefabInstance: {fileID: 215533474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1053276075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+  m_PrefabInstance: {fileID: 1128472428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1053276076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053276075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6f71feaf15c244fb264f7745c7b55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleReward
+  rewardObject: {fileID: 1053276075}
+  rewardMessageUI: {fileID: 724679981}
+--- !u!114 &1053276077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053276075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c123d33c0c874d947b91658af4a7c2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  itemData: {fileID: 11400000, guid: 20bc57381289a66428dfb2b36f0904c3, type: 2}
+  promptUI: {fileID: 724679981}
+  pickupDialogue: []
+--- !u!65 &1053276078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053276075}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.068398155, z: 0}
 --- !u!1001 &1055045253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12837,6 +12889,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122110362}
   m_CullTransparentMesh: 1
+--- !u!1001 &1128472428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.597
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.675
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 36.081
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99001664
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.14095074
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -16.206
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_Name
+      value: Rewardingpills_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053276078}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053276077}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053276076}
+  m_SourcePrefab: {fileID: 100100000, guid: 687f9559644557d4ba5b955087ff2032, type: 3}
 --- !u!4 &1154853015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3193946160588618884, guid: 4ab19bfbeb9048a45a44b9ce3847f750, type: 3}
@@ -13419,15 +13541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f7dfec81d75874c9642e4af7535510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decay
-  maxDecay: 100
-  currentDecay: 100
-  passiveDecayRate: 1.695
-  revealThreshold: 30
-  decaySlider: {fileID: 1237046852}
-  sliderFill: {fileID: 1833542594}
-  healthyColor: {r: 0, g: 1, b: 0, a: 1}
-  dangerColor: {r: 1, g: 0, b: 0, a: 1}
-  fadeImage: {fileID: 0}
 --- !u!114 &1237046852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20330,6 +20443,8 @@ MonoBehaviour:
   promptUI: {fileID: 724679981}
   normalCameraModel: {fileID: 1611978905}
   brokenCameraModel: {fileID: 32583838}
+  breakSound: {fileID: 0}
+  sparkEffect: {fileID: 0}
 --- !u!4 &1820044561
 Transform:
   m_ObjectHideFlags: 0
@@ -20566,6 +20681,7 @@ MonoBehaviour:
   drawerLockPanel: {fileID: 32154877}
   patternLockPanel: {fileID: 232958887}
   chestVariant: {fileID: 843246792}
+  puzzleReward: {fileID: 1053276076}
   scriptsToDisable: []
   triggerCollider: {fileID: 0}
   sound: {fileID: 0}
@@ -29290,6 +29406,7 @@ SceneRoots:
   - {fileID: 1713689767}
   - {fileID: 2021461967}
   - {fileID: 910641942}
+  - {fileID: 1128472428}
   - {fileID: 184463286}
   - {fileID: 489696620}
   - {fileID: 745306941}
