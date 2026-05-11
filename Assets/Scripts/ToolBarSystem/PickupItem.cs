@@ -1,7 +1,5 @@
 using UnityEngine;
-
-using UnityEngine;
-
+using Highlighting;
 public class PickupItem : MonoBehaviour
 {
     public ItemData itemData;
@@ -22,8 +20,11 @@ public class PickupItem : MonoBehaviour
             {
                 if (pickupDialogue != null && pickupDialogue.Length > 0)
                 {
-                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
+//                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
                 }
+
+                var h = GetComponentInParent<Highlightable>();
+                if (h != null) h.MarkTaken();
 
                 Destroy(gameObject);
             }

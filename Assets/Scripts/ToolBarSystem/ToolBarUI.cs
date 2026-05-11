@@ -41,6 +41,53 @@ public class ToolBarUI : MonoBehaviour
         return slots[selectedIndex].GetItem();
     }
 
+public void UseSelectedItem()
+{
+    Debug.Log("UseSelectedItem called");
+
+    ItemData selectedItem = GetSelectedItem();
+
+    if (selectedItem == null)
+    {
+        Debug.Log("No selected item.");
+        return;
+    }
+
+    Debug.Log("Selected item ID: " + selectedItem.itemID);
+
+    if (selectedItem.itemID == "pills")
+    {
+        if (Decay.Instance != null)
+        {
+            Decay.Instance.AddCognitive(selectedItem.cognitiveRestoreAmount);
+            Debug.Log("Used pills. Cognitive +" + selectedItem.cognitiveRestoreAmount);
+        }
+        else
+        {
+            Debug.LogWarning("Decay.Instance is null");
+            return;
+        }
+
+        RemoveSelectedItem();
+    }
+    else
+    {
+        Debug.Log("Selected item is not usable: " + selectedItem.itemID);
+    }
+}
+
+public void RemoveSelectedItem()
+{
+    if (selectedIndex < 0 || selectedIndex >= slots.Length)
+    {
+        Debug.LogWarning("Invalid selectedIndex: " + selectedIndex);
+        return;
+    }
+
+    slots[selectedIndex].ClearSlot();
+
+    Debug.Log("Removed selected item from slot: " + selectedIndex);
+}
     public void SelectSlot(int index)
     {
         if (index < 0 || index >= slots.Length)
