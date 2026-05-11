@@ -1,4 +1,5 @@
 using UnityEngine;
+using Highlighting;
 public class PickupItem : MonoBehaviour
 {
     public ItemData itemData;
@@ -21,6 +22,9 @@ public class PickupItem : MonoBehaviour
                 {
 //                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
                 }
+
+                var h = GetComponentInParent<Highlightable>();
+                if (h != null) h.MarkTaken();
 
                 Destroy(gameObject);
             }
