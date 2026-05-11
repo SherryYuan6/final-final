@@ -12,7 +12,6 @@ public class TutorialDialogueManager : MonoBehaviour
     private string[] currentLines;
     private int currentIndex;
     private bool isDialogueActive = false;
-    private System.Action onDialogueFinished;
 
     private void Awake()
     {
@@ -30,18 +29,19 @@ public class TutorialDialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string[] lines, System.Action finishedCallback = null)
+    public void StartDialogue(string[] lines)
     {
+        if (lines == null || lines.Length == 0) return;
+
         currentLines = lines;
         currentIndex = 0;
-
-        onDialogueFinished = finishedCallback;
-
         isDialogueActive = true;
 
-        dialoguePanel.SetActive(true);
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(true);
 
-        dialogueText.text = currentLines[currentIndex];
+        if (dialogueText != null)
+            dialogueText.text = currentLines[currentIndex];
     }
 
     void ShowNextLine()
@@ -60,12 +60,9 @@ public class TutorialDialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-    dialoguePanel.SetActive(false);
+        isDialogueActive = false;
 
-    if (onDialogueFinished != null)
-    {
-        onDialogueFinished.Invoke();
-        onDialogueFinished = null;
-    }
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
     }
 }

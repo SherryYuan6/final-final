@@ -34,11 +34,7 @@ public class BreakableCamera : MonoBehaviour
             {
                 BreakCamera();
 
-                if (selectedItem.consumeOnUse)
-                {
-                    ToolBarUI.Instance.RemoveItems(requiredItemID, 1);
-                }
-
+                ToolBarUI.Instance.RemoveItems(requiredItemID, 1);
             }
             else
             {

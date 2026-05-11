@@ -67,6 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Final.slnx",
-    "workbench.colorTheme": "Cursor Light"
+    "dotnet.defaultSolution": "Final.slnx"
 }

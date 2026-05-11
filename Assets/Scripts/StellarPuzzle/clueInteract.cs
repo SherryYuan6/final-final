@@ -1,5 +1,4 @@
 using UnityEngine;
-using Highlighting;
 
 public class clueInteract: MonoBehaviour
 {
@@ -54,9 +53,6 @@ public class clueInteract: MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        var h = GetComponentInParent<Highlightable>();
-        if (h != null) h.MarkSeen();
     }
 
     public void CloseClue()
