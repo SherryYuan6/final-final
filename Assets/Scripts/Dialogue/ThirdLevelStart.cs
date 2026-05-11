@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class StartTutorial : MonoBehaviour
+public class ThirdLevelStart : MonoBehaviour
 {
     [Header("Player Control")]
     public MonoBehaviour playerMovement; 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         // 禁止玩家移动
@@ -13,20 +13,20 @@ public class StartTutorial : MonoBehaviour
 
         string[] introLines = new string[]
         {
-            "Camera is watching...",
-            "I need to destroy it first.",
-            "Oh, there's a hammer nearby."
+            "The exit door was locked.",
+            "I need to find the power source that control it.",
         };
-         TutorialDialogueManager.instance.StartDialogue(
+
+        TutorialDialogueManager.instance.StartDialogue(
             introLines,
             OnDialogueFinished
         );
+    }
 
-        void OnDialogueFinished()
+    void OnDialogueFinished()
     {
         // 对话结束后恢复移动
         if (playerMovement != null)
             playerMovement.enabled = true;
-    }
     }
 }
