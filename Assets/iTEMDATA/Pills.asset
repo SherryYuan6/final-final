@@ -15,5 +15,5 @@ MonoBehaviour:
   itemID: pills
   Icon: {fileID: 897236828, guid: 674c2950d55c7784bb5ca02114c1c31c, type: 3}
   isConsumable: 1
-  cognitiveRestoreAmount: 25
+  cognitiveRestoreAmount: 50
   consumeOnUse: 1
