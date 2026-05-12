@@ -3,9 +3,8 @@ using Highlighting;
 public class PickupItem : MonoBehaviour
 {
     public ItemData itemData;
-    public GameObject promptUI;
+    //public GameObject promptUI;
 
-    [TextArea(2, 4)]
     public string[] pickupDialogue;
 
     public void PickUp()
@@ -20,7 +19,7 @@ public class PickupItem : MonoBehaviour
             {
                 if (pickupDialogue != null && pickupDialogue.Length > 0)
                 {
-//                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
+                    TutorialDialogueManager.instance.StartDialogue(pickupDialogue);
                 }
 
                 var h = GetComponentInParent<Highlightable>();
@@ -31,11 +30,11 @@ public class PickupItem : MonoBehaviour
         }
     }
 
-    public void ShowPrompt(bool show)
-    {
-        if (promptUI != null)
-        {
-            promptUI.SetActive(show);
-        }
-    }
+    //public void ShowPrompt(bool show)
+    //{
+    //    if (promptUI != null)
+    //    {
+    //        promptUI.SetActive(show);
+    //    }
+    //}
 }

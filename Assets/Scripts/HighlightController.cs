@@ -4,10 +4,6 @@ using UnityEngine.Rendering;
 
 namespace Highlighting
 {
-    /// <summary>
-    /// Drives highlight shell mesh renderers: shared Unlit transparent material + per-renderer MPB tint.
-    /// Does not modify original meshes or materials.
-    /// </summary>
     [DisallowMultipleComponent]
     public class HighlightController : MonoBehaviour
     {
@@ -29,7 +25,6 @@ namespace Highlighting
         [SerializeField] private float breatheHz = 0.7f;
         [SerializeField, Range(0f, 0.5f)] private float breatheAmplitude = 0.2f;
 
-        // DEBUG: toggle off / delete this block after fixing "shell not visible"
         [Header("Debug (remove after investigation)")]
         [SerializeField] private bool debugLogs;
         [SerializeField, Tooltip("Log ApplyShells when |alpha delta| exceeds this (visible flip always logs).")]
@@ -79,7 +74,6 @@ namespace Highlighting
             debugLastShellVisible = false;
             debugLastShellAlpha = -1f;
 
-            // DEBUG: remove after investigation — one-shot proof HighlightController + debug flag are alive
             if (debugLogs)
             {
                 Debug.Log(
@@ -132,7 +126,6 @@ namespace Highlighting
         {
             bool visible = baseColor.a > 0.0001f;
 
-            // DEBUG: remove after investigation — log when shell visibility toggles or alpha jumps noticeably
             if (debugLogs)
             {
                 bool visibleChanged = !debugShellStateInitialized || visible != debugLastShellVisible;

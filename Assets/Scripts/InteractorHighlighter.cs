@@ -6,7 +6,6 @@ namespace Highlighting
 {
     public class InteractorHighlighter : MonoBehaviour
     {
-        // DEBUG: toggle off / delete this block after fixing "shell not visible"
         [Header("Debug (remove after investigation)")]
         [SerializeField] private bool debugLogs;
         [Tooltip("0 = log focus ray every frame when debugLogs is on; >0 seconds between focus logs.")]
@@ -18,7 +17,7 @@ namespace Highlighting
         [Header("Distance")]
         [SerializeField] private float normalRange = 2.2f;
         [SerializeField] private float clueRange = 2.8f;
-        [SerializeField, Range(0f, 1f)] private float nearbyWeakIntensity = 0.25f; // t01 for nearby (not focused)
+        [SerializeField, Range(0f, 1f)] private float nearbyWeakIntensity = 0.25f; 
 
         [Header("Raycast")]
         [SerializeField] private float raycastMaxDistance = 3.0f;
@@ -39,10 +38,6 @@ namespace Highlighting
         private Highlightable focused;
         private float nextFocusDebugAt;
 
-        /// <summary>
-        /// Last camera ray that resolved <see cref="focused"/>; used for range so pivot-offset meshes
-        /// (merged OBJ, etc.) don't read as "meters away" while the ray hits at arm's length.
-        /// </summary>
         private RaycastHit lastFocusHit;
         private bool lastFocusHitValid;
 
@@ -52,7 +47,6 @@ namespace Highlighting
             scanHits = new Collider[Mathf.Max(8, scanMaxHits)];
         }
 
-        // DEBUG: remove after investigation — confirms script runs & camera exists (otherwise Update exits early)
         private void Start()
         {
             if (!debugLogs) return;
@@ -84,7 +78,6 @@ namespace Highlighting
 
         private void Update()
         {
-            // Lazy bind: Awake can run before camera exists in some load orders
             if (viewCamera == null) viewCamera = Camera.main;
             if (viewCamera == null) return;
 
@@ -120,7 +113,6 @@ namespace Highlighting
                 nearby.Add(h);
             }
 
-            // DEBUG: remove after investigation
             if (debugLogs)
             {
                 Debug.Log(
@@ -162,7 +154,6 @@ namespace Highlighting
                     lastFocusHitValid = true;
                 }
 
-                // DEBUG: remove after investigation
                 if (shouldLogFocus)
                 {
                     nextFocusDebugAt = Time.time + Mathf.Max(0f, debugFocusLogEverySeconds);
@@ -175,7 +166,6 @@ namespace Highlighting
             }
             else
             {
-                // DEBUG: remove after investigation
                 if (shouldLogFocus)
                 {
                     nextFocusDebugAt = Time.time + Mathf.Max(0f, debugFocusLogEverySeconds);
@@ -201,7 +191,6 @@ namespace Highlighting
 
                 if (!inRange)
                 {
-                    // DEBUG: remove after investigation
                     if (debugLogs)
                         Debug.Log(
                             $"[InteractorHighlighter] ApplyHighlights name=\"{h.gameObject.name}\" dForRange={dForRange:F3} dPivot={dPivot:F3} range={range:F3} inRange=False focused==(h)={focused == h} SetHighlight t01=0",
@@ -214,7 +203,6 @@ namespace Highlighting
                 bool isFocused = (focused == h);
                 if (isFocused)
                 {
-                    // DEBUG: remove after investigation
                     if (debugLogs)
                         Debug.Log(
                             $"[InteractorHighlighter] ApplyHighlights name=\"{h.gameObject.name}\" dForRange={dForRange:F3} dPivot={dPivot:F3} range={range:F3} inRange=True focused==(h)=True SetHighlight t01=1",
@@ -226,7 +214,7 @@ namespace Highlighting
                 {
                     float t = enableNearbyWeakHighlight ? nearbyWeakIntensity : 0f;
 
-                    // DEBUG: remove after investigation
+   
                     if (debugLogs)
                         Debug.Log(
                             $"[InteractorHighlighter] ApplyHighlights name=\"{h.gameObject.name}\" dForRange={dForRange:F3} dPivot={dPivot:F3} range={range:F3} inRange=True focused==(h)=False SetHighlight t01={t:F3}",
@@ -237,10 +225,7 @@ namespace Highlighting
             }
         }
 
-        /// <summary>
-        /// Distance used for highlight/interaction range: ray depth when crosshair is on this object,
-        /// otherwise closest approach from player root to any collider under the Highlightable.
-        /// </summary>
+  
         private float ComputeProximityDistance(Highlightable h, float dPivotFallback)
         {
             if (h == focused && lastFocusHitValid)
