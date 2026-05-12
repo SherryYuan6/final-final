@@ -1250,6 +1250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c33349cd64cee949827d866aba85331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FolderClueReveal
+  folderHintPanel: {fileID: 0}
+  wrongHint: {fileID: 0}
+  trueHint: {fileID: 0}
 --- !u!1 &144265820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7694977423377730395, guid: a900f1c22e5d88743b2dcfab96b6a24c, type: 3}
@@ -9846,6 +9849,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 992957927}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 992957929}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 992957928}
   m_SourcePrefab: {fileID: 100100000, guid: 47199b22b362b834087ce08c4b4ab5c9, type: 3}
 --- !u!4 &992957921 stripped
 Transform:
@@ -9892,6 +9901,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16230212, y: 0.15793033, z: 0.091871135}
   m_Center: {x: 0.0015239285, y: -0.0018558367, z: 0.045935933}
+--- !u!114 &992957928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992957922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b65681a59db14e8287eb6a0fbc611c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Highlighting.HighlightController
+  shellMaterial: {fileID: 0}
+  autoCreateShells: 1
+  shellScale: 1.03
+  shellObjectName: __HighlightShell
+  fadeInTime: 0.12
+  fadeOutTime: 0.18
+  breatheHz: 0.7
+  breatheAmplitude: 0.2
+  debugLogs: 0
+  debugShellAlphaEpsilon: 0.02
+--- !u!114 &992957929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992957922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1dec68b29fc4597b53f8ec23c99320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Highlighting.Highlightable
+  persistentId: 
+  persistProgress: 1
+  type: 0
+  progress: 0
+  availability: 0
+  lockedReason: "\u9700\u8981\u6761\u4EF6"
+  normalAvailable:
+    color: {r: 0.42, g: 0.62, b: 0.78, a: 0.26}
+    intensity: 1
+    breathe: 0
+  clueNew:
+    color: {r: 0.38, g: 0.74, b: 0.76, a: 0.36}
+    intensity: 1.05
+    breathe: 1
+  unavailable:
+    color: {r: 0.82, g: 0.56, b: 0.42, a: 0.3}
+    intensity: 0.9
+    breathe: 0
+  completed:
+    color: {r: 0.52, g: 0.56, b: 0.62, a: 0.16}
+    intensity: 1
+    breathe: 0
+  controller: {fileID: 0}
 --- !u!1 &1002403716
 GameObject:
   m_ObjectHideFlags: 0
@@ -11087,6 +11153,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f7dfec81d75874c9642e4af7535510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decay
+  maxDecay: 100
+  currentDecay: 20
+  passiveDecayRate: 1.695
+  revealThreshold: 50
+  decaySlider: {fileID: 0}
+  sliderFill: {fileID: 0}
+  healthyColor:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
+  dangerColor:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
+  fadeImage: {fileID: 0}
+  isEnding: 0
 --- !u!114 &1237046852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14841,6 +14925,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 277706752}
     m_Modifications:
+    - target: {fileID: 1425383010550552498, guid: 7ff30c7e7a931fa4abaacbcf858e20a1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 679ed89ef5dbc414b890a9a3740ccaf2, type: 2}
     - target: {fileID: 1425383010550552526, guid: 7ff30c7e7a931fa4abaacbcf858e20a1, type: 3}
       propertyPath: m_Name
       value: 20m Epoxy Ground (2)
@@ -19095,6 +19183,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7154437458797816345, guid: cac581442f0ff4e429749ff81932fe8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2119343656}
+    - targetCorrespondingSourceObject: {fileID: 7154437458797816345, guid: cac581442f0ff4e429749ff81932fe8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119343658}
+    - targetCorrespondingSourceObject: {fileID: 7154437458797816345, guid: cac581442f0ff4e429749ff81932fe8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119343657}
     - targetCorrespondingSourceObject: {fileID: 1733617176249191013, guid: cac581442f0ff4e429749ff81932fe8a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 226205383}
@@ -19121,6 +19215,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupItem
   itemData: {fileID: 11400000, guid: c203989f184287b4f81a6ee7a303f0ff, type: 2}
   pickupDialogue: []
+--- !u!114 &2119343657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342085788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b65681a59db14e8287eb6a0fbc611c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Highlighting.HighlightController
+  shellMaterial: {fileID: 0}
+  autoCreateShells: 1
+  shellScale: 1.03
+  shellObjectName: __HighlightShell
+  fadeInTime: 0.12
+  fadeOutTime: 0.18
+  breatheHz: 0.7
+  breatheAmplitude: 0.2
+  debugLogs: 0
+  debugShellAlphaEpsilon: 0.02
+--- !u!114 &2119343658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342085788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1dec68b29fc4597b53f8ec23c99320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Highlighting.Highlightable
+  persistentId: 
+  persistProgress: 1
+  type: 0
+  progress: 0
+  availability: 0
+  lockedReason: "\u9700\u8981\u6761\u4EF6"
+  normalAvailable:
+    color: {r: 0.42, g: 0.62, b: 0.78, a: 0.26}
+    intensity: 1
+    breathe: 0
+  clueNew:
+    color: {r: 0.38, g: 0.74, b: 0.76, a: 0.36}
+    intensity: 1.05
+    breathe: 1
+  unavailable:
+    color: {r: 0.82, g: 0.56, b: 0.42, a: 0.3}
+    intensity: 0.9
+    breathe: 0
+  completed:
+    color: {r: 0.52, g: 0.56, b: 0.62, a: 0.16}
+    intensity: 1
+    breathe: 0
+  controller: {fileID: 0}
 --- !u!1001 &2134260727
 PrefabInstance:
   m_ObjectHideFlags: 0
