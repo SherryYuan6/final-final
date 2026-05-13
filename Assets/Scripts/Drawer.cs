@@ -15,6 +15,9 @@ public class Drawer : MonoBehaviour
     [Header("Small Box")]
     public GameObject chestVariant;
 
+    [Header("Reward")]
+    public PuzzleReward puzzleReward;
+
     [Header("Disable while UI is open")]
     public MonoBehaviour[] scriptsToDisable;
 
@@ -25,6 +28,8 @@ public class Drawer : MonoBehaviour
 
     private bool playerInRange = false;
     private bool isUnlocked = false;
+
+    
 
     void Start()
     {
@@ -71,53 +76,55 @@ public class Drawer : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void UnlockDrawer()
-    {
-        isUnlocked = true;
-        playerInRange = false;
-
-        if (drawerLockPanel != null)
-            drawerLockPanel.SetActive(false);
-
-        if (promptUI != null)
-            promptUI.SetActive(false);
-
-        if (closeDrawer != null)
-            closeDrawer.SetActive(false);
-
-        if (openDrawer != null)
-            openDrawer.SetActive(true);
-
-        if (chestVariant != null)
-            chestVariant.SetActive(true);
-
-        if (triggerCollider != null)
-        triggerCollider.enabled = false;
-        
-        else
+   public void UnlockDrawer()
 {
-    Collider col = GetComponent<Collider>();
-    if (col != null)
-        col.enabled = false;
-}
+    isUnlocked = true;
+    playerInRange = false;
 
-        if (sound != null)
-            sound.Play();
+    if (drawerLockPanel != null)
+        drawerLockPanel.SetActive(false);
 
-        if (patternLockPanel != null)
-        {
-            patternLockPanel.SetActive(true);
+    if (promptUI != null)
+        promptUI.SetActive(false);
 
-            SetPlayerControl(false);
+    if (closeDrawer != null)
+        closeDrawer.SetActive(false);
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+    if (openDrawer != null)
+        openDrawer.SetActive(true);
 
-            return;
-        }
+    if (chestVariant != null)
+        chestVariant.SetActive(true);
 
-        FinishPatternLock();
+    if (puzzleReward != null)
+        puzzleReward.GiveReward();
+
+    if (triggerCollider != null)
+        triggerCollider.enabled = false;
+    else
+    {
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+            col.enabled = false;
     }
+
+    if (sound != null)
+        sound.Play();
+
+    if (patternLockPanel != null)
+    {
+        patternLockPanel.SetActive(true);
+
+        SetPlayerControl(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        return;
+    }
+
+    FinishPatternLock();
+}
 
     public void FinishPatternLock()
     {
