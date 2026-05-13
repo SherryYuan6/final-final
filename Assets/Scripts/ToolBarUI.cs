@@ -59,7 +59,7 @@ public void UseSelectedItem(GameObject target = null)
 
     Debug.Log("Selected item ID: " + selectedItem.itemID);
 
-    if (selectedItem.itemID == "Pills")
+    if (selectedItem.itemID == "pills")
     {
         if (ChipManager.Instance != null)
         {

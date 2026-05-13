@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0423baffecf1df846899d724178dd156, type: 3}
-  m_Name: wrench
+  m_Name: Wrench
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: wrench
+  itemID: Wrench
   Icon: {fileID: 11639047, guid: 35cd3e7c61456426c9d3fe75e1e97627, type: 3}
+  isConsumable: 0
+  cognitiveRestoreAmount: 0
   consumeOnUse: 1

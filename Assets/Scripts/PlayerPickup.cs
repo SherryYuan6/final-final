@@ -49,7 +49,7 @@ public class PlayerPickup : MonoBehaviour
         if (item != null)
         {
             currentItem = item;
-            item.ShowPrompt(true);
+            //item.ShowPrompt(true);
         }
     }
 
@@ -59,7 +59,7 @@ public class PlayerPickup : MonoBehaviour
 
         if (item != null && currentItem == item)
         {
-            item.ShowPrompt(false);
+            //item.ShowPrompt(false);
             currentItem = null;
         }
     }
