@@ -24,6 +24,7 @@ public class BreakableCamera : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             ItemData selectedItem = ToolBarUI.Instance.GetSelectedItem();
+            Debug.Log("Selected: " + (selectedItem != null ? selectedItem.itemID : "NONE"));
             if (selectedItem != null && selectedItem.itemID == requiredItemID)
             {
                 BreakCamera();

@@ -684,6 +684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fca36bd81de7c4cafce7bbf02ca611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &65615323 stripped
+AudioListener:
+  m_CorrespondingSourceObject: {fileID: 81448068208000304, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+  m_PrefabInstance: {fileID: 65615317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &92953924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3485773276523611762, guid: ddfc1292959bce64f8c5c758157712f1, type: 3}
@@ -2786,9 +2791,9 @@ MonoBehaviour:
   DoorClose2: {fileID: 1920505205}
   DoorOpen2: {fileID: 2404435199357322600}
   promptUI: {fileID: 724679981}
-  nextSceneName: ' '
-  delayBeforeLoad: 1.5
-  playerInRange: 0
+  nextSceneName: Office
+  delayBeforeLoad: 0
+  playerInRange: 1
 --- !u!4 &386562998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6835404314195506806, guid: 8f5eff0dc5bed3f4ab0d6b39678e66d5, type: 3}
@@ -3601,12 +3606,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479898109}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.922, y: 1.297, z: 48.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9534602, y: -0.8026799, z: -0.084438324}
   m_LocalScale: {x: 2.1109972, y: 2.1109972, z: 2.1109972}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1298037963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &479898111
 MonoBehaviour:
@@ -4213,7 +4218,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 888502980}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1021824759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4367,7 +4372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &608276146
 Transform:
   m_ObjectHideFlags: 0
@@ -7342,7 +7347,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4793946}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1021824759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7381,6 +7386,10 @@ Transform:
   - {fileID: 142111953}
   - {fileID: 320023388}
   - {fileID: 825521590}
+  - {fileID: 1481003335}
+  - {fileID: 1008500058}
+  - {fileID: 1702561244}
+  - {fileID: 562565376}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1030544718
@@ -8075,12 +8084,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186104969}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.73499, y: 3.07943, z: 44.43601}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.61045, y: 0.97975016, z: -4.0484314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1298037963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191786827
 GameObject:
@@ -9093,6 +9102,40 @@ Transform:
   - {fileID: 5944654773480011423}
   - {fileID: 1820044561}
   m_Father: {fileID: 1588468410}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1298037962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298037963}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1298037963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298037962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.87546, y: 2.09968, z: 48.48444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2095545386}
+  - {fileID: 1186104972}
+  - {fileID: 479898110}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1300095307
 PrefabInstance:
@@ -10422,7 +10465,7 @@ RectTransform:
   m_Children:
   - {fileID: 908247206}
   - {fileID: 724679982}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1021824759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11987,13 +12030,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702561242}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07956, y: 0.96673, z: 39.53889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -489.74625, y: -252.86661, z: 39.53889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1940823709}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1021824759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1713689767
 PrefabInstance:
@@ -12821,11 +12864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792f2aef2a95126479e88513a7197e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableCamera
-  requiredItemID: hammer
+  requiredItemID: Axe
   promptUI: {fileID: 724679981}
-  normalCameraModel: {fileID: 1820044559}
+  normalCameraModel: {fileID: 1380822560742774595}
   brokenCameraModel: {fileID: 32583838}
-  breakSound: {fileID: 0}
+  breakSound: {fileID: 8584313922263138053, guid: c417ccb7e1634ec4cb5a7d9e8c647fcd, type: 3}
   sparkEffect: {fileID: 0}
 --- !u!4 &1820044561
 Transform:
@@ -12865,7 +12908,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 0.5
   m_Center: {x: 0.1, y: 1, z: -0.5}
 --- !u!114 &1820044563
 MonoBehaviour:
@@ -12882,7 +12925,7 @@ MonoBehaviour:
   _DisplayName: 
   LinkedCamera: {fileID: 549938109}
   SyncToMainCameraConfig: 1
-  CameraAudio: {fileID: 0}
+  CameraAudio: {fileID: 65615323}
   PivotPoint: {fileID: 1391902042}
   DefaultPitch: 20
   AngleSwept: 60
@@ -14293,6 +14336,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092236385}
   m_CullTransparentMesh: 1
+--- !u!1 &2095545385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095545386}
+  - component: {fileID: 2095545387}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095545386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095545385}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9534602, y: -0.8026799, z: -0.084438324}
+  m_LocalScale: {x: 2.1109972, y: 2.1109972, z: 2.1109972}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1298037963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095545387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095545385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2657fa74fd7619e449202d2b5eb04c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SecurityConsole
+  LinkedCameras: []
+  CameraImage: {fileID: 0}
+  ActiveCameraLabel: {fileID: 0}
+  AutoswitchEnable: 0
+  AutoswitchStartTime: 10
+  AutoswitchInterval: 15
+  IntegrityPenalty: 20
 --- !u!1001 &2103590707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15554,11 +15648,6 @@ SceneRoots:
   - {fileID: 608276146}
   - {fileID: 65615317}
   - {fileID: 1685142018}
-  - {fileID: 1481003335}
-  - {fileID: 1008500058}
-  - {fileID: 1702561244}
   - {fileID: 1021824759}
-  - {fileID: 479898110}
   - {fileID: 1588468410}
-  - {fileID: 1186104972}
-  - {fileID: 562565376}
+  - {fileID: 1298037963}

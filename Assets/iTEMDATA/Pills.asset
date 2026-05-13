@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0423baffecf1df846899d724178dd156, type: 3}
   m_Name: Pills
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: pills
+  itemID: Pills
   Icon: {fileID: 897236828, guid: 674c2950d55c7784bb5ca02114c1c31c, type: 3}
   isConsumable: 1
   cognitiveRestoreAmount: 50
