@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0423baffecf1df846899d724178dd156, type: 3}
   m_Name: Gear
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemID: Gear
+  itemID: gear
   Icon: {fileID: -2036053891, guid: d74cf0ebdd195a74a9847ebe7a34275c, type: 3}
   isConsumable: 0
   cognitiveRestoreAmount: 0

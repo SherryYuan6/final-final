@@ -424,7 +424,10 @@ public class ChipManager : MonoSingleton<ChipManager>
     {
         if (isEnding) return;
         isEnding = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         StartCoroutine(EndingSequence());
+
     }
 
     IEnumerator EndingSequence()
