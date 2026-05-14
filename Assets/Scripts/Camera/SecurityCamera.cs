@@ -11,6 +11,7 @@ public class SecurityCamera : MonoBehaviour
     [SerializeField] bool SyncToMainCameraConfig = true;
     [SerializeField] AudioListener CameraAudio;
     [SerializeField] Transform PivotPoint;
+    [SerializeField] Transform CameraFacing;
     [SerializeField] float DefaultPitch = 20f;
     [SerializeField] float AngleSwept = 60f;
     [SerializeField] float SweepSpeed = 6f;
@@ -34,13 +35,19 @@ public class SecurityCamera : MonoBehaviour
     [SerializeField] UnityEvent<GameObject> OnDetected = new UnityEvent<GameObject>();
     [SerializeField] UnityEvent OnAllClear = new UnityEvent();
 
+    [SerializeField] GameObject EnemyPrefab;
+    [SerializeField] Transform EnemySpawnPoint;
+    bool _spawnTimerRunning = false;
+    float _spawnTimer = 0f;
+
     public RenderTexture OutputTexture { get; private set; }
     public string DisplayName => _DisplayName;
     public GameObject CurrentlyDetectedTarget { get; private set; }
     public bool HasDetectedTarget { get; private set; } = false;
-
+    public bool IsLockedOnTarget { get; private set; } = false;
     public float CurrentDetectionLevel { get; private set; } = 0f;
 
+    GameObject _lockedTarget;
     float CurrentAngle = 0f;
     float CosDetectionHalfAngle;
     bool SweepClockwise = true;
@@ -86,17 +93,13 @@ public class SecurityCamera : MonoBehaviour
 
         RefreshTargetInfo();
 
-        Quaternion desiredRotation = PivotPoint.transform.rotation;
-
-        if (CurrentlyDetectedTarget != null && AllTargets[CurrentlyDetectedTarget].DetectionLevel >= SuspicionThreshold)
+        if (IsLockedOnTarget && _lockedTarget != null)
         {
-            if (AllTargets[CurrentlyDetectedTarget].InFOV)
-            {
-                var vecToTarget = (CurrentlyDetectedTarget.transform.position + TargetVOffset * Vector3.up -
-                                   PivotPoint.transform.position).normalized;
+            Vector3 targetPos = _lockedTarget.transform.position + TargetVOffset * Vector3.up;
 
-                desiredRotation = Quaternion.LookRotation(vecToTarget, Vector3.up) * Quaternion.Euler(0f, 90f, 0f);
-            }
+            Vector3 dirToTarget = (targetPos - PivotPoint.transform.position).normalized;
+
+            Debug.Log("PivotRight:" + PivotPoint.transform.right + " PivotForward:" + PivotPoint.transform.forward + " dirToTarget:" + dirToTarget);
         }
         else
         {
@@ -104,12 +107,22 @@ public class SecurityCamera : MonoBehaviour
             if (Mathf.Abs(CurrentAngle) >= (AngleSwept * 0.5f))
                 SweepClockwise = !SweepClockwise;
 
-            desiredRotation = PivotPoint.transform.parent.rotation * Quaternion.Euler(0f, CurrentAngle, DefaultPitch);
+            Quaternion desiredRotation = PivotPoint.transform.parent.rotation * Quaternion.Euler(0f, CurrentAngle, DefaultPitch);
+            PivotPoint.transform.rotation = Quaternion.RotateTowards(PivotPoint.transform.rotation,
+                                                                     desiredRotation,
+                                                                     MaxRotationSpeed * Time.deltaTime);
         }
 
-        PivotPoint.transform.rotation = Quaternion.RotateTowards(PivotPoint.transform.rotation,
-                                                                 desiredRotation,
-                                                                 MaxRotationSpeed * Time.deltaTime);
+        if (_spawnTimerRunning)
+        {
+            _spawnTimer += Time.deltaTime;
+            if (_spawnTimer >= 5f)
+            {
+                _spawnTimerRunning = false;
+                if (EnemyPrefab != null && EnemySpawnPoint != null)
+                    Instantiate(EnemyPrefab, EnemySpawnPoint.position, EnemySpawnPoint.rotation);
+            }
+        }
     }
 
     void RefreshTargetInfo()
@@ -123,15 +136,16 @@ public class SecurityCamera : MonoBehaviour
             bool isVisible = false;
 
             Vector3 vecToTarget = (targetInfo.LinkedGO.transform.position + TargetVOffset * Vector3.up -
-                                   LinkedCamera.transform.position).normalized;
+                                   CameraFacing.transform.position).normalized;
 
-            if (Vector3.Dot(LinkedCamera.transform.forward, vecToTarget) >= CosDetectionHalfAngle)
+            if (Vector3.Dot(CameraFacing.transform.forward, vecToTarget) >= CosDetectionHalfAngle)
             {
                 RaycastHit hitInfo;
-                if (Physics.Raycast(LinkedCamera.transform.position, vecToTarget,
-                                    out hitInfo, DetectionRange, DetectionLayerMask, QueryTriggerInteraction.Ignore))
+                if (Physics.Raycast(CameraFacing.transform.position, vecToTarget,
+                    out hitInfo, DetectionRange, DetectionLayerMask, QueryTriggerInteraction.Ignore))
                 {
-                    if (hitInfo.collider.gameObject == targetInfo.LinkedGO)
+                    if (hitInfo.collider.transform.IsChildOf(targetInfo.LinkedGO.transform) ||
+                        hitInfo.collider.gameObject == targetInfo.LinkedGO)
                         isVisible = true;
                 }
             }
@@ -144,6 +158,10 @@ public class SecurityCamera : MonoBehaviour
                 if (targetInfo.DetectionLevel >= 1f && !targetInfo.OnDetectedEventSent)
                 {
                     HasDetectedTarget = true;
+                    IsLockedOnTarget = true;
+                    _spawnTimerRunning = true;
+                    _spawnTimer = 0f;
+                    _lockedTarget = targetInfo.LinkedGO;
                     targetInfo.OnDetectedEventSent = true;
                     OnDetected.Invoke(targetInfo.LinkedGO);
                 }
@@ -176,10 +194,14 @@ public class SecurityCamera : MonoBehaviour
 
     public void Disable()
     {
+        _spawnTimerRunning = false;
+        _spawnTimer = 0f;
         _isDisabled = true;
         LinkedCamera.enabled = false;
         DetectionLight.enabled = false;
         DetectionTrigger.enabled = false;
+        IsLockedOnTarget = false;
+        _lockedTarget = null;
         AllTargets.Clear();
         CurrentDetectionLevel = 0f;
         OnAllClear.Invoke();

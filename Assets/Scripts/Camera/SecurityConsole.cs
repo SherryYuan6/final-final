@@ -75,4 +75,6 @@ public class SecurityConsole : MonoBehaviour
     {
         CameraDetection.Instance?.EndDetection();
     }
+
+
 }
