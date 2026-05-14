@@ -654,6 +654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
   delay: 5
   rb: {fileID: 0}
+  triggered: 0
 --- !u!1 &405370930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1284,6 @@ GameObject:
   - component: {fileID: 859204138}
   - component: {fileID: 859204139}
   - component: {fileID: 859204140}
-  - component: {fileID: 859204141}
   m_Layer: 0
   m_Name: Object_5 (1)
   m_TagString: Untagged
@@ -1424,20 +1424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &859204141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859204134}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &910945893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1255770707667179476, guid: a6da47c38dbcbd440b1da6686778fc0d, type: 3}
@@ -2114,7 +2100,6 @@ GameObject:
   - component: {fileID: 1527590327}
   - component: {fileID: 1527590329}
   - component: {fileID: 1527590330}
-  - component: {fileID: 1527590331}
   m_Layer: 0
   m_Name: Object_30 (1)
   m_TagString: Untagged
@@ -2255,20 +2240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &1527590331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527590323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &1539941888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +2511,6 @@ GameObject:
   - component: {fileID: 1719756674}
   - component: {fileID: 1719756676}
   - component: {fileID: 1719756677}
-  - component: {fileID: 1719756678}
   m_Layer: 0
   m_Name: Object_27 (1)
   m_TagString: Untagged
@@ -2681,20 +2651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &1719756678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719756670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &1722679281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,7 +2972,6 @@ GameObject:
   - component: {fileID: 2036276214}
   - component: {fileID: 2036276215}
   - component: {fileID: 2036276216}
-  - component: {fileID: 2036276217}
   m_Layer: 0
   m_Name: Object_8 (1)
   m_TagString: Untagged
@@ -3157,20 +3112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &2036276217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036276210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &71513434165460798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,7 +3126,6 @@ GameObject:
   - component: {fileID: 8918834831898976995}
   - component: {fileID: 8918834831898976997}
   - component: {fileID: 8918834831898976998}
-  - component: {fileID: 8918834831898976999}
   m_Layer: 0
   m_Name: Object_23
   m_TagString: Untagged
@@ -3307,7 +3247,6 @@ GameObject:
   - component: {fileID: 8700021236275494682}
   - component: {fileID: 8700021236275494684}
   - component: {fileID: 8700021236275494685}
-  - component: {fileID: 8700021236275494686}
   m_Layer: 0
   m_Name: Object_16
   m_TagString: Untagged
@@ -3465,7 +3404,6 @@ GameObject:
   - component: {fileID: 6006465524812061675}
   - component: {fileID: 6006465524812061677}
   - component: {fileID: 6006465524812061678}
-  - component: {fileID: 6006465524812061679}
   m_Layer: 0
   m_Name: Object_25
   m_TagString: Untagged
@@ -3665,7 +3603,6 @@ GameObject:
   - component: {fileID: 7954567059219714414}
   - component: {fileID: 7954567059219714416}
   - component: {fileID: 7954567059219714417}
-  - component: {fileID: 7954567059219714418}
   m_Layer: 0
   m_Name: Object_20
   m_TagString: Untagged
@@ -3814,7 +3751,6 @@ GameObject:
   - component: {fileID: 328794221765062897}
   - component: {fileID: 9125707588466121889}
   - component: {fileID: 9125707588466121890}
-  - component: {fileID: 9125707588466121891}
   - component: {fileID: 9125707588466121892}
   m_Layer: 0
   m_Name: Object_12
@@ -3992,7 +3928,6 @@ GameObject:
   - component: {fileID: 6059256627800319311}
   - component: {fileID: 6059256627800319313}
   - component: {fileID: 6059256627800319314}
-  - component: {fileID: 6059256627800319315}
   m_Layer: 0
   m_Name: Object_24
   m_TagString: Untagged
@@ -4135,7 +4070,6 @@ GameObject:
   - component: {fileID: 9182495636156982960}
   - component: {fileID: 9182495636156982961}
   - component: {fileID: 9182495636156982962}
-  - component: {fileID: 9182495636156982963}
   m_Layer: 0
   m_Name: Object_8
   m_TagString: Untagged
@@ -4249,7 +4183,6 @@ GameObject:
   - component: {fileID: 6955236686472833214}
   - component: {fileID: 6955236686472833216}
   - component: {fileID: 6955236686472833217}
-  - component: {fileID: 6955236686472833218}
   m_Layer: 0
   m_Name: Object_18
   m_TagString: Untagged
@@ -4428,7 +4361,6 @@ GameObject:
   - component: {fileID: 3038916803535768040}
   - component: {fileID: 8646764246237356085}
   - component: {fileID: 8646764246237356086}
-  - component: {fileID: 8646764246237356087}
   m_Layer: 0
   m_Name: Object_14
   m_TagString: Untagged
@@ -4450,7 +4382,6 @@ GameObject:
   - component: {fileID: 7354476090363343911}
   - component: {fileID: 7354476090363343912}
   - component: {fileID: 7354476090363343913}
-  - component: {fileID: 7354476090363343914}
   m_Layer: 0
   m_Name: Object_2
   m_TagString: Untagged
@@ -4519,7 +4450,6 @@ GameObject:
   - component: {fileID: 6684485886378028558}
   - component: {fileID: 6684485886378028559}
   - component: {fileID: 6684485886378028560}
-  - component: {fileID: 6684485886378028561}
   m_Layer: 0
   m_Name: Object_6
   m_TagString: Untagged
@@ -4585,7 +4515,6 @@ GameObject:
   - component: {fileID: 7059987488461726452}
   - component: {fileID: 7059987488461726453}
   - component: {fileID: 7059987488461726454}
-  - component: {fileID: 7059987488461726455}
   m_Layer: 0
   m_Name: Object_5
   m_TagString: Untagged
@@ -4656,7 +4585,6 @@ GameObject:
   - component: {fileID: 8413104971750905564}
   - component: {fileID: 8413104971750905566}
   - component: {fileID: 8413104971750905567}
-  - component: {fileID: 8413104971750905568}
   m_Layer: 0
   m_Name: Object_19
   m_TagString: Untagged
@@ -4810,7 +4738,6 @@ GameObject:
   - component: {fileID: 7706827173141122382}
   - component: {fileID: 7706827173141122384}
   - component: {fileID: 7706827173141122385}
-  - component: {fileID: 7706827173141122386}
   m_Layer: 0
   m_Name: Object_27
   m_TagString: Untagged
@@ -4895,6 +4822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
   delay: 5
   rb: {fileID: 0}
+  triggered: 0
 --- !u!4 &5893085288691681404
 Transform:
   m_ObjectHideFlags: 0
@@ -4979,20 +4907,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6006465524812061679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639911880509385674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &6048474325847562789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,7 +4921,6 @@ GameObject:
   - component: {fileID: 6048474325847562790}
   - component: {fileID: 6048474325847562791}
   - component: {fileID: 6048474325847562792}
-  - component: {fileID: 6048474325847562793}
   m_Layer: 0
   m_Name: Object_4
   m_TagString: Untagged
@@ -5076,20 +4989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6048474325847562793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6048474325847562789}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &6059256627800319310
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5200,20 +5099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6059256627800319315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2880165033650191404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &6060382216109164455
 GameObject:
   m_ObjectHideFlags: 0
@@ -5283,6 +5168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
   delay: 5
   rb: {fileID: 0}
+  triggered: 0
 --- !u!1 &6397764451522007604
 GameObject:
   m_ObjectHideFlags: 0
@@ -5297,7 +5183,6 @@ GameObject:
   - component: {fileID: 6859594270049395445}
   - component: {fileID: 6859594270049395447}
   - component: {fileID: 6859594270049395448}
-  - component: {fileID: 6859594270049395449}
   m_Layer: 0
   m_Name: Object_22
   m_TagString: Untagged
@@ -5319,7 +5204,6 @@ GameObject:
   - component: {fileID: 6541690149443649831}
   - component: {fileID: 6541690149443649833}
   - component: {fileID: 6541690149443649834}
-  - component: {fileID: 6541690149443649835}
   m_Layer: 0
   m_Name: Object_17
   m_TagString: Untagged
@@ -5388,20 +5272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6541690149443649835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6541690149443649830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!4 &6554698647304797295
 Transform:
   m_ObjectHideFlags: 0
@@ -5495,7 +5365,6 @@ GameObject:
   - component: {fileID: 7355972092592537904}
   - component: {fileID: 7355972092592537906}
   - component: {fileID: 7355972092592537907}
-  - component: {fileID: 7355972092592537908}
   m_Layer: 0
   m_Name: Object_21
   m_TagString: Untagged
@@ -5572,20 +5441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6684485886378028561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254394008378987480}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!4 &6764711626370096201
 Transform:
   m_ObjectHideFlags: 0
@@ -5693,20 +5548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6859594270049395449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6397764451522007604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!33 &6940441162639753877
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5825,20 +5666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &6955236686472833218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3303375910398606746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &7059987488461726451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5949,20 +5776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7059987488461726455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4564122552651841095}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!4 &7136987762898213464
 Transform:
   m_ObjectHideFlags: 0
@@ -6093,20 +5906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7354476090363343914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727198781776618368}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &7355972092592537903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6217,20 +6016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7355972092592537908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6681023004540134936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &7523076783271535290
 GameObject:
   m_ObjectHideFlags: 0
@@ -6245,7 +6030,6 @@ GameObject:
   - component: {fileID: 9121630905161275926}
   - component: {fileID: 9121630905161275927}
   - component: {fileID: 9121630905161275928}
-  - component: {fileID: 9121630905161275929}
   m_Layer: 0
   m_Name: Object_3
   m_TagString: Untagged
@@ -6267,7 +6051,6 @@ GameObject:
   - component: {fileID: 7608034363815216534}
   - component: {fileID: 7608034363815216536}
   - component: {fileID: 7608034363815216537}
-  - component: {fileID: 7608034363815216538}
   m_Layer: 0
   m_Name: Object_26
   m_TagString: Untagged
@@ -6336,20 +6119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7608034363815216538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7608034363815216533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &7630842894336199803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6365,7 +6134,6 @@ GameObject:
   - component: {fileID: 7630842894336199804}
   - component: {fileID: 7630842894336199807}
   - component: {fileID: 7630842894336199808}
-  - component: {fileID: 7630842894336199809}
   m_Layer: 0
   m_Name: Object_29
   m_TagString: Untagged
@@ -6456,20 +6224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7630842894336199809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7630842894336199803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &7706827173141122381
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6580,20 +6334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7706827173141122386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370274815681399551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!4 &7724326234484392185
 Transform:
   m_ObjectHideFlags: 0
@@ -6639,7 +6379,6 @@ GameObject:
   - component: {fileID: 8643498491667603425}
   - component: {fileID: 8643498491667603426}
   - component: {fileID: 8643498491667603427}
-  - component: {fileID: 8643498491667603428}
   m_Layer: 0
   m_Name: Object_7
   m_TagString: Untagged
@@ -6716,20 +6455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &7954567059219714418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2186390873348753242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &7984088120037814441
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6855,6 +6580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
   delay: 5
   rb: {fileID: 0}
+  triggered: 0
 --- !u!23 &8413104971750905563
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6965,20 +6691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &8413104971750905568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4880758405568749696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &8643498491667603424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7089,20 +6801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &8643498491667603428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762996374275238932}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!33 &8646764246237356084
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7145,20 +6843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &8646764246237356087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3707441095916355463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!33 &8700021236275494681
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7228,20 +6912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &8700021236275494686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541765989866112003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!4 &8918834831898976994
 Transform:
   m_ObjectHideFlags: 0
@@ -7318,20 +6988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &8918834831898976999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71513434165460798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &9121630905161275925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7442,20 +7098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &9121630905161275929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7523076783271535290}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!23 &9125707588466121889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7527,18 +7169,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2883654815081506176, guid: 39483b374e303844499b938748821852, type: 3}
---- !u!114 &9125707588466121891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440247404146355615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!114 &9125707588466121892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7553,6 +7183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
   delay: 5
   rb: {fileID: 0}
+  triggered: 0
 --- !u!1 &9136605889949358741
 GameObject:
   m_ObjectHideFlags: 0
@@ -7567,7 +7198,6 @@ GameObject:
   - component: {fileID: 9136605889949358742}
   - component: {fileID: 9136605889949358744}
   - component: {fileID: 9136605889949358745}
-  - component: {fileID: 9136605889949358746}
   m_Layer: 0
   m_Name: Object_30
   m_TagString: Untagged
@@ -7636,20 +7266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &9136605889949358746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9136605889949358741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1 &9161439176415422357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7664,7 +7280,6 @@ GameObject:
   - component: {fileID: 9161439176415422358}
   - component: {fileID: 9161439176415422360}
   - component: {fileID: 9161439176415422361}
-  - component: {fileID: 9161439176415422362}
   m_Layer: 0
   m_Name: Object_28
   m_TagString: Untagged
@@ -7733,20 +7348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &9161439176415422362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9161439176415422357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!33 &9182495636156982959
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7816,20 +7417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b017f8492f1e64eb0711cb572a347a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &9182495636156982963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3070059043804196486}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e54eeff8b737a419945e2da93e8f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DelayedCollapsePlatform
-  delay: 5
-  rb: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class KillZone : MonoBehaviour
             {
                 "What.",
                 "What is happening.",
-                "Oh sh—"
+                "Oh shit"
             },
             () =>
             {
