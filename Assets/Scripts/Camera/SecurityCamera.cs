@@ -26,7 +26,7 @@ public class SecurityCamera : MonoBehaviour
     [SerializeField] Light DetectionLight;
     [SerializeField] Color Colour_NothingDetected = Color.green;
     [SerializeField] Color Colour_FullyDetected = Color.red;
-    [SerializeField] float DetectionBuildRate = 0.5f;
+    [SerializeField] float DetectionBuildRate = 3.5f;
     [SerializeField] float DetectionDecayRate = 0.5f;
     [SerializeField][Range(0f, 1f)] float SuspicionThreshold = 0.5f;
     [SerializeField] List<string> DetectableTags;
@@ -116,11 +116,19 @@ public class SecurityCamera : MonoBehaviour
         if (_spawnTimerRunning)
         {
             _spawnTimer += Time.deltaTime;
-            if (_spawnTimer >= 5f)
+            if (_spawnTimer >= 2f)
             {
                 _spawnTimerRunning = false;
                 if (EnemyPrefab != null && EnemySpawnPoint != null)
+                {
                     Instantiate(EnemyPrefab, EnemySpawnPoint.position, EnemySpawnPoint.rotation);
+                    TutorialDialogueManager.instance.StartDialogue(new string[]
+                    {
+        "I stayed under the alarm for too long.",
+        "There are going to be guards soon.",
+        "I need to move. Now."
+                    });
+                }
             }
         }
     }

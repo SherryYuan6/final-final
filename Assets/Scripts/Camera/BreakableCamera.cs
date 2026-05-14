@@ -3,88 +3,89 @@ using UnityEngine;
 public class BreakableCamera : MonoBehaviour
 {
     public string requiredItemID = "Axe";
-    public GameObject promptUI;
     public GameObject normalCameraModel;
     public GameObject brokenCameraModel;
     public AudioSource breakSound;
     public ParticleSystem sparkEffect;
 
-    private bool playerInRange;
+    [SerializeField] float breakRange = 3f;
+
     private bool isBroken;
+    private bool playerInRange;
+    private Transform player;
 
     void Start()
     {
-        SetModel(broken: false);
+        SetModel(false);
+
+        GameObject p = GameObject.FindWithTag("Player");
+        if (p != null)
+            player = p.transform;
     }
 
     void Update()
     {
-        if (isBroken)
-            return;
+        if (isBroken || player == null) return;
+
+        // E TO BREAK
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            ItemData selectedItem = ToolBarUI.Instance.GetSelectedItem();
-            Debug.Log("Selected: " + (selectedItem != null ? selectedItem.itemID : "NONE"));
-            if (selectedItem != null && selectedItem.itemID == requiredItemID)
-            {
-                BreakCamera();
-                if (selectedItem.consumeOnUse)
-                    ToolBarUI.Instance.RemoveItems(requiredItemID, 1);
-            }
+            TryBreak();
         }
     }
 
-    void BreakCamera()
+    public void TryBreak()
+    {
+        if (isBroken || player == null) return;
+
+        if (Vector3.Distance(transform.position, player.position) > breakRange)
+            return;
+
+        ItemData selectedItem = ToolBarUI.Instance.GetSelectedItem();
+
+        if (selectedItem != null && selectedItem.itemID == requiredItemID)
+        {
+            BreakCam();
+
+            if (selectedItem.consumeOnUse)
+                ToolBarUI.Instance.RemoveItems(requiredItemID, 1);
+        }
+    }
+
+    void BreakCam()
     {
         isBroken = true;
+
         GetComponent<SecurityCamera>()?.Disable();
-        //Debug.Log("Camera broken!");
-        SetModel(broken: true);
+        SetModel(true);
 
-        if (promptUI != null)
-        {
-            promptUI.SetActive(false);
-        }
-
-        if (breakSound != null)
-            breakSound.Play();
-
-        if (sparkEffect != null)
-            sparkEffect.Play();
-
+        if (breakSound != null) breakSound.Play();
+        if (sparkEffect != null) sparkEffect.Play();
 
         TutorialDialogueManager.instance.StartDialogue(new string[]
         {
-           "Good. No more eyes on me.",
+            "Good. No more eyes on me.",
             "The light still looks wrong. The shadows are in the wrong place.",
-            "I have been seeing things. Small things. A texture that does not resolve. A sound from somewhere below the floor.",
-            "I thought it was stress. I am not sure anymore.",
+            "I have been seeing things. Small things. A texture that does not resolve.",
             "There is something in this building I need to find.",
-            "I need to keep moving forward, or they'll catch up to me."
         });
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player") || isBroken)
-        return;
-
-        playerInRange = true;
-        promptUI.SetActive(true);
-    }
-
-private void OnTriggerExit(Collider other)
-{
-    //Debug.Log("Something exited trigger: " + other.name);
-    if (!other.CompareTag("Player")) return;
-        playerInRange = false;
-
-        if (promptUI != null)
-            promptUI.SetActive(false);
-}
     private void SetModel(bool broken)
     {
         normalCameraModel?.SetActive(!broken);
         brokenCameraModel?.SetActive(broken);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
     }
 }

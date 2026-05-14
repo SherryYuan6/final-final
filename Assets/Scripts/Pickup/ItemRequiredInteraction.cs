@@ -33,7 +33,7 @@ public class ItemRequiredInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
 
@@ -46,7 +46,7 @@ public class ItemRequiredInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = false;
 

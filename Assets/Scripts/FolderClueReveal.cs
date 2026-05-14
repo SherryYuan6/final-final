@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class FolderClueReveal : MonoBehaviour
 {
@@ -6,43 +7,50 @@ public class FolderClueReveal : MonoBehaviour
     public GameObject wrongHint;
     public GameObject trueHint;
 
-    private bool lastRevealState = false;
+    private bool hasTriggeredThought = false;
+    private bool lastWasWrong = false;
 
     public void OpenClue()
     {
-        if (folderHintPanel != null)
-            folderHintPanel.SetActive(true);
-
+        folderHintPanel.SetActive(true);
         UpdateClueDisplay();
-    }
-
-    public void CloseClue()
-    {
-        if (folderHintPanel != null)
-            folderHintPanel.SetActive(false);
     }
 
     void Update()
     {
-        if (folderHintPanel != null && folderHintPanel.activeSelf && ChipManager.Instance != null)
-        {
-            bool currentState = ChipManager.Instance.CanRevealTrueClue();
+        if (folderHintPanel == null || !folderHintPanel.activeSelf) return;
 
-            if (currentState != lastRevealState)
+        UpdateClueDisplay();
+        if (!hasTriggeredThought && lastWasWrong)
+        {
+            StartCoroutine(DelayedThought());
+            hasTriggeredThought = true;
+        }
+    }
+
+    IEnumerator DelayedThought()
+    {
+        yield return new WaitForSecondsRealtime(2.5f);
+
+        if (folderHintPanel.activeSelf && wrongHint.activeSelf)
+        {
+            TutorialDialogueManager.instance.StartDialogue(new string[]
             {
-                UpdateClueDisplay();
-            }
+                "That doesn't seem right...",
+                "2333333333? It feels like a placeholder.",
+                "I feel like I should wait a bit or press K for the true hint.",
+                "Later to restore sanity, find pills to consume."
+            });
         }
     }
 
     void UpdateClueDisplay()
     {
-        if (ChipManager.Instance == null) return;
-
-        bool showTrue = ChipManager.Instance.CanRevealTrueClue();
-        lastRevealState = showTrue;
+        bool showTrue = ChipManager.Instance != null && ChipManager.Instance.CanRevealTrueClue();
 
         if (trueHint != null) trueHint.SetActive(showTrue);
         if (wrongHint != null) wrongHint.SetActive(!showTrue);
+
+        lastWasWrong = !showTrue;
     }
 }

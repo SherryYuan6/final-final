@@ -179,6 +179,7 @@ namespace Highlighting
             for (int i = 0; i < meshRenderers.Length; i++)
             {
                 var baseMr = meshRenderers[i];
+                Debug.Log("Scanning: " + baseMr.name + " on " + gameObject.name);
                 if (baseMr == null) continue;
                 if (baseMr.GetComponent<HighlightShell>() != null) continue;
 

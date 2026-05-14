@@ -4,32 +4,29 @@ Shader "Custom/UI/BlackGlitchOverlay"
     {
         _Tint ("Tint", Color) = (0,0,0,1)
         _Intensity ("Intensity", Range(0,1)) = 0
-        _BlockSize ("Block Size", Range(1,100)) = 30
+        _BlockSize ("Block Size", Range(5,200)) = 60
         _Speed ("Speed", Range(0,20)) = 8
-        _ScanlineStrength ("Scanline Strength", Range(0,2)) = 0.3
-        _Flicker ("Flicker", Range(0,1)) = 0.15
+        _DistortionStrength ("Distortion", Range(0,0.1)) = 0.03
     }
 
     SubShader
     {
         Tags
         {
-            "Queue"="Transparent"
+            "Queue"="Overlay"
             "RenderType"="Transparent"
             "IgnoreProjector"="True"
-            "RenderPipeline"="UniversalPipeline"
         }
 
         Pass
         {
-            Blend SrcAlpha OneMinusSrcAlpha
-            Cull Off
+            Blend One Zero
             ZWrite Off
+            Cull Off
 
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
             struct Attributes
@@ -49,14 +46,13 @@ Shader "Custom/UI/BlackGlitchOverlay"
                 float _Intensity;
                 float _BlockSize;
                 float _Speed;
-                float _ScanlineStrength;
-                float _Flicker;
+                float _DistortionStrength;
             CBUFFER_END
 
             float hash21(float2 p)
             {
                 p = frac(p * float2(123.34, 456.21));
-                p += dot(p, p + 45.32);
+                p += dot(p, p + 34.345);
                 return frac(p.x * p.y);
             }
 
@@ -73,30 +69,41 @@ Shader "Custom/UI/BlackGlitchOverlay"
                 float2 uv = IN.uv;
                 float time = _Time.y * _Speed;
 
-                float bandY = floor(uv.y * _BlockSize);
-                float bandNoise = hash21(float2(bandY, floor(time * 8.0)));
+                // --- BLOCK GRID ---
+                float blockY = floor(uv.y * _BlockSize);
+                float blockX = floor(uv.x * (_BlockSize * 0.5));
 
-                float glitchMask = step(0.72, bandNoise);
+                float blockNoise = hash21(float2(blockX, blockY + floor(time)));
 
-                float lineNoise = hash21(float2(floor(uv.y * 200.0), floor(time * 25.0)));
-                float thinLines = step(0.92, lineNoise);
+                // full corruption regions (NO transparency)
+                float corruption = step(0.65, blockNoise);
 
-                float scan = sin(uv.y * 700.0) * 0.5 + 0.5;
-                float flicker = 1.0 - (_Flicker * hash21(float2(floor(time * 18.0), 2.31)));
+                // --- HORIZONTAL TEARING ---
+                float tearLine = step(0.92, hash21(float2(blockY, floor(time * 3.0))));
+                float offsetX = (hash21(float2(blockY, time)) - 0.5) * _DistortionStrength * tearLine;
 
-                float alpha = 0.0;
+                uv.x += offsetX;
 
-                alpha += glitchMask * (0.15 + 0.35 * _Intensity);
-                alpha += thinLines * (0.08 + 0.2 * _Intensity);
-                alpha += (1.0 - scan) * _ScanlineStrength * 0.08 * _Intensity;
+                // --- SCANLINE DARKENING (not transparency) ---
+                float scan = sin(uv.y * 600.0 + time * 5.0) * 0.5 + 0.5;
+                float scanMask = lerp(0.6, 1.0, scan);
 
-                alpha *= flicker;
-                alpha = saturate(alpha * _Intensity);
+                // --- FINAL MASK ---
+                float mask = max(corruption, tearLine);
 
-                half4 col = _Tint;
-                col.a = alpha;
+                // force full coverage
+                float3 col = _Tint.rgb;
 
-                return col;
+                // dark glitch blocks
+                col *= lerp(0.2, 1.0, mask);
+
+                // scanline interference
+                col *= scanMask;
+
+                // intensity drives visibility loss, not transparency
+                col = lerp(col, float3(0,0,0), _Intensity);
+
+                return float4(col, 1.0);
             }
             ENDHLSL
         }

@@ -1,39 +1,67 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] float attackRange = 1.5f;
     [SerializeField] float attackCooldown = 1f;
-    [SerializeField] float interactRange = 2f;
-    [SerializeField] string gameOverScene = "GameOver";
-    Transform _player;
-    NavMeshAgent _agent;
-    float _attackTimer = 0f;
+    [SerializeField] string gameOverScene = "EndScene";
+
+    Transform player;
+    NavMeshAgent agent;
+    float attackTimer;
+
+    private bool isDead;
+
     void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
-        _player = GameObject.FindWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+
+        GameObject p = GameObject.FindWithTag("Player");
+        if (p != null)
+            player = p.transform;
     }
+
     void Update()
     {
-        if (_player == null) return;
-        _agent.SetDestination(_player.position);
-        float dist = Vector3.Distance(transform.position, _player.position);
+        if (isDead || player == null) return;
+
+        agent.SetDestination(player.position);
+
+        float dist = Vector3.Distance(transform.position, player.position);
+
         if (dist <= attackRange)
         {
-            _attackTimer += Time.deltaTime;
-            if (_attackTimer >= attackCooldown)
+            attackTimer += Time.deltaTime;
+
+            if (attackTimer >= attackCooldown)
             {
-                _attackTimer = 0f;
-                UnityEngine.SceneManagement.SceneManager.LoadScene(gameOverScene);
+                SceneManager.LoadScene(gameOverScene);
             }
         }
-        if (dist <= interactRange && Input.GetKeyDown(KeyCode.E))
+        else
         {
-            ItemData selectedItem = ToolBarUI.Instance.GetSelectedItem();
-            if (selectedItem != null && selectedItem.itemID == "Axe")
-                Destroy(gameObject);
+            attackTimer = 0f;
         }
+    }
+    public void TryHitWithAxe()
+    {
+        if (isDead) return;
+
+        ItemData selectedItem = ToolBarUI.Instance?.GetSelectedItem();
+
+        if (selectedItem != null && selectedItem.itemID == "Axe")
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        isDead = true;
+        agent.enabled = false;
+        Destroy(gameObject, 0.2f);
     }
 }

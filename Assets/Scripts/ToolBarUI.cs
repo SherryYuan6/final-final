@@ -45,40 +45,42 @@ public class ToolBarUI : MonoBehaviour
         return slots[selectedIndex].GetItem();
     }
 
-public void UseSelectedItem(GameObject target = null)
-{
-    Debug.Log("UseSelectedItem called");
-
-    ItemData selectedItem = GetSelectedItem();
-
-    if (selectedItem == null)
+    public void UseSelectedItem(GameObject target = null)
     {
-        Debug.Log("No selected item.");
-        return;
-    }
+        Debug.Log("UseSelectedItem called");
 
-    Debug.Log("Selected item ID: " + selectedItem.itemID);
+        ItemData selectedItem = GetSelectedItem();
 
-    if (selectedItem.itemID == "pills")
-    {
-        if (ChipManager.Instance != null)
+        if (selectedItem == null)
         {
-            ChipManager.Instance.AddCognitive(selectedItem.cognitiveRestoreAmount);
-            Debug.Log("Used pills. Cognitive +" + selectedItem.cognitiveRestoreAmount);
-        }
-        else
-        {
-            Debug.LogWarning("Decay.Instance is null");
+            Debug.Log("No selected item.");
             return;
         }
 
-        RemoveSelectedItem();
-    }
-    else
-    {
-        Debug.Log("Selected item is not usable: " + selectedItem.itemID);
-        UseItemOnTarget(selectedItem, target);
+        Debug.Log("Selected item ID: " + selectedItem.itemID);
+
+        if (selectedItem.itemID.ToLower() == "pills")
+        {
+            if (ChipManager.Instance != null)
+            {
+                ChipManager.Instance.AddCognitive(selectedItem.cognitiveRestoreAmount);
+                Debug.Log("Used pills. Cognitive +" + selectedItem.cognitiveRestoreAmount);
+            }
+            else
+            {
+                Debug.LogWarning("ChipManager.Instance is null");
+            }
+
+            RemoveSelectedItem();
+            return;
         }
+        if (target != null)
+        {
+            UseItemOnTarget(selectedItem, target);
+            return;
+        }
+
+        Debug.Log("Selected item is not usable here: " + selectedItem.itemID);
     }
 
     private void UseItemOnTarget(ItemData item, GameObject target)

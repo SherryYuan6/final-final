@@ -2,18 +2,12 @@ using UnityEngine;
 
 public class Pills : MonoBehaviour
 {
-    public float healAmount = 25f;
+    public float healAmount = 50f;
 
     public void UsePill()
     {
-        if (ChipManager.Instance != null)
-        {
-            ChipManager.Instance.AddCognitive(healAmount);
-        //    Debug.Log("Pill used. Sanity +" + healAmount);
-        //}
-        //else
-        //{
-        //    Debug.LogWarning("Decay.Instance is null");
-        }
+        if (ChipManager.Instance == null) return;
+
+        ChipManager.Instance.AddCognitive(healAmount);
     }
 }

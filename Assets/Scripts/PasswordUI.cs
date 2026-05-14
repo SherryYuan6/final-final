@@ -5,20 +5,19 @@ public class PasswordUI : MonoBehaviour
 {
     public static PasswordUI Instance;
 
-    [Header("UI Objects")]
     public GameObject passwordPanel;
     public TMP_InputField passwordInput;
     public TMP_Text resultText;
 
     private PasswordDoor currentDoor;
-    private bool isOpen = false;
+    private bool isOpen;
+
+    public bool IsOpen => isOpen;
 
     void Awake()
     {
         Instance = this;
-
-        if (passwordPanel != null)
-            passwordPanel.SetActive(false);
+        passwordPanel.SetActive(false);
     }
 
     public void OpenUI(PasswordDoor door)
@@ -30,10 +29,9 @@ public class PasswordUI : MonoBehaviour
         passwordInput.text = "";
         resultText.text = "";
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        Time.timeScale = 0f; 
+        CursorManager.SetInputLocked(true);
+        CursorManager.Unlock();
+        Time.timeScale = 0f;
     }
 
     public void CloseUI()
@@ -43,9 +41,8 @@ public class PasswordUI : MonoBehaviour
 
         passwordPanel.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
+        CursorManager.SetInputLocked(false);
+        CursorManager.Lock();
         Time.timeScale = 1f;
     }
 
@@ -53,9 +50,7 @@ public class PasswordUI : MonoBehaviour
     {
         if (currentDoor == null) return;
 
-        string input = passwordInput.text;
-
-        if (currentDoor.CheckPassword(input))
+        if (currentDoor.CheckPassword(passwordInput.text))
         {
             resultText.text = "Correct!";
             currentDoor.OpenDoor();
@@ -72,13 +67,9 @@ public class PasswordUI : MonoBehaviour
         if (!isOpen) return;
 
         if (Input.GetKeyDown(KeyCode.Return))
-        {
             SubmitPassword();
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
             CloseUI();
-        }
     }
 }
